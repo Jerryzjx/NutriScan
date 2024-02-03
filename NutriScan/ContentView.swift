@@ -18,6 +18,7 @@ struct ContentView: View {
                 ForEach(items) { item in
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                            .font(.custom("Geist-Regular", size: 20))
                     } label: {
                         Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                     }
@@ -36,8 +37,22 @@ struct ContentView: View {
             }
         } detail: {
             Text("Select an item")
+                .font(.custom("GeistVariable-Regular", size: 20))
         }
     }
+    /*
+     Font: Geist Variable ["GeistVariable-Regular", "GeistVariable-UltraLight", "GeistVariable-Light", "GeistVariable-Medium", "GeistVariable-SemiBold", "GeistVariable-Bold", "GeistVariable-Black", "GeistVariable-UltraBlack"]
+     */
+    
+    // Get our font name
+    /*
+    init() {
+        for familyName in UIFont.familyNames.sorted() {
+            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+            print(familyName, fontNames)
+        }
+    }
+     */
 
     private func addItem() {
         withAnimation {
