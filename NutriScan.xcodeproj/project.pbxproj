@@ -18,6 +18,12 @@
 		C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4BC54762B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4BC54772B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
+		C4BC54792B6EF67000A435AC /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54782B6EF67000A435AC /* ScannerView.swift */; };
+		C4BC547A2B6EF67000A435AC /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54782B6EF67000A435AC /* ScannerView.swift */; };
+		C4BC547B2B6EF67000A435AC /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54782B6EF67000A435AC /* ScannerView.swift */; };
+		C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */; };
+		C4BC547E2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */; };
+		C4BC547F2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */; };
 		C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */; };
 		C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
 		C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
@@ -54,6 +60,8 @@
 		C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITests.swift; sourceTree = "<group>"; };
 		C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C4BC54742B6EF30000A435AC /* Geist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.otf"; sourceTree = "<group>"; };
+		C4BC54782B6EF67000A435AC /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
 		C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
 		C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GeistVariableVF.ttf; path = ../../../Downloads/Geist/GeistVariableVF.ttf; sourceTree = "<group>"; };
 		C4D58E2C2B6EF08800E12C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +126,8 @@
 				C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */,
 				C4BC54742B6EF30000A435AC /* Geist-Regular.otf */,
 				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
+				C4BC54782B6EF67000A435AC /* ScannerView.swift */,
+				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -299,6 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
+				C4BC54792B6EF67000A435AC /* ScannerView.swift in Sources */,
+				C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 				C45ADA282B69E277001C34F9 /* Item.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
 			);
@@ -309,6 +321,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45ADA372B69E27A001C34F9 /* NutriScanTests.swift in Sources */,
+				C4BC547A2B6EF67000A435AC /* ScannerView.swift in Sources */,
+				C4BC547E2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +330,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BC547F2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
+				C4BC547B2B6EF67000A435AC /* ScannerView.swift in Sources */,
 				C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */,
 				C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */,
 			);
@@ -468,6 +484,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +515,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
