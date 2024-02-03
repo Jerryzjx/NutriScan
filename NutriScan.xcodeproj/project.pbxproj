@@ -15,6 +15,8 @@
 		C45ADA372B69E27A001C34F9 /* NutriScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA362B69E27A001C34F9 /* NutriScanTests.swift */; };
 		C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */; };
 		C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */; };
+		C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */; };
+		C4D58E272B6EEE4300E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E262B6EEE4300E12C8B /* GeistVariableVF.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		C45ADA3C2B69E27A001C34F9 /* NutriScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutriScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITests.swift; sourceTree = "<group>"; };
 		C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
+		C4D58E262B6EEE4300E12C8B /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeistVariableVF.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +100,15 @@
 		C45ADA222B69E277001C34F9 /* NutriScan */ = {
 			isa = PBXGroup;
 			children = (
+				C4D58E232B6EEDB900E12C8B /* View */,
+				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C45ADA292B69E279001C34F9 /* Assets.xcassets */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
+				C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */,
+				C4D58E262B6EEE4300E12C8B /* GeistVariableVF.ttf */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -128,6 +136,20 @@
 				C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */,
 			);
 			path = NutriScanUITests;
+			sourceTree = "<group>";
+		};
+		C4D58E222B6EEDB100E12C8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4D58E232B6EEDB900E12C8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +257,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45ADA2D2B69E279001C34F9 /* Preview Assets.xcassets in Resources */,
+				C4D58E272B6EEE4300E12C8B /* GeistVariableVF.ttf in Resources */,
+				C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */,
 				C45ADA2A2B69E279001C34F9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
