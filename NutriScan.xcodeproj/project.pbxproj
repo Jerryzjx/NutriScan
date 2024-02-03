@@ -15,8 +15,13 @@
 		C45ADA372B69E27A001C34F9 /* NutriScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA362B69E27A001C34F9 /* NutriScanTests.swift */; };
 		C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */; };
 		C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */; };
+		C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
+		C4BC54762B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
+		C4BC54772B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */; };
-		C4D58E272B6EEE4300E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E262B6EEE4300E12C8B /* GeistVariableVF.ttf */; };
+		C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
+		C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
+		C4D58E2B2B6EF06D00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +53,10 @@
 		C45ADA3C2B69E27A001C34F9 /* NutriScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutriScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITests.swift; sourceTree = "<group>"; };
 		C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4BC54742B6EF30000A435AC /* Geist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.otf"; sourceTree = "<group>"; };
 		C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
-		C4D58E262B6EEE4300E12C8B /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeistVariableVF.ttf; sourceTree = "<group>"; };
+		C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GeistVariableVF.ttf; path = ../../../Downloads/Geist/GeistVariableVF.ttf; sourceTree = "<group>"; };
+		C4D58E2C2B6EF08800E12C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +107,7 @@
 		C45ADA222B69E277001C34F9 /* NutriScan */ = {
 			isa = PBXGroup;
 			children = (
+				C4D58E2C2B6EF08800E12C8B /* Info.plist */,
 				C4D58E232B6EEDB900E12C8B /* View */,
 				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
@@ -108,7 +116,8 @@
 				C45ADA292B69E279001C34F9 /* Assets.xcassets */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
 				C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */,
-				C4D58E262B6EEE4300E12C8B /* GeistVariableVF.ttf */,
+				C4BC54742B6EF30000A435AC /* Geist-Regular.otf */,
+				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -257,9 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45ADA2D2B69E279001C34F9 /* Preview Assets.xcassets in Resources */,
-				C4D58E272B6EEE4300E12C8B /* GeistVariableVF.ttf in Resources */,
+				C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */,
 				C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */,
 				C45ADA2A2B69E279001C34F9 /* Assets.xcassets in Resources */,
+				C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D58E2B2B6EF06D00E12C8B /* GeistVariableVF.ttf in Resources */,
+				C4BC54762B6EF30000A435AC /* Geist-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */,
+				C4BC54772B6EF30000A435AC /* Geist-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +467,7 @@
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -482,6 +497,7 @@
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
