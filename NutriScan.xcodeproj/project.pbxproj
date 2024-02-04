@@ -191,6 +191,7 @@
 				C45ADA1C2B69E277001C34F9 /* Sources */,
 				C45ADA1D2B69E277001C34F9 /* Frameworks */,
 				C45ADA1E2B69E277001C34F9 /* Resources */,
+				C4A69E072B7003D200A5F73B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -312,6 +313,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4A69E072B7003D200A5F73B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C45ADA1C2B69E277001C34F9 /* Sources */ = {
@@ -498,6 +521,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
@@ -529,6 +553,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
