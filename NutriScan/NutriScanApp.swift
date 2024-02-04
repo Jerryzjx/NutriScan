@@ -10,6 +10,9 @@ import SwiftData
 
 @main
 struct NutriScanApp: App {
+    
+    @StateObject private var vm = ScannerViewModel()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,7 +28,11 @@ struct NutriScanApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BarCodeScannerView()
+                .environmentObject(vm)
+                .task {
+                    await vm.requestDataScannerAccessStatus()
+                }
         }
         .modelContainer(sharedModelContainer)
     }
