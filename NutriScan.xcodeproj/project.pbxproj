@@ -15,12 +15,13 @@
 		C45ADA372B69E27A001C34F9 /* NutriScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA362B69E27A001C34F9 /* NutriScanTests.swift */; };
 		C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */; };
 		C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */; };
+		C47A29622B70838C002AD677 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29612B70838C002AD677 /* APIManager.swift */; };
+		C47A29642B70882E002AD677 /* NutritionFactAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */; };
+		C47A29672B7088CC002AD677 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C47A29662B7088CC002AD677 /* Alamofire */; };
+		C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29682B708B97002AD677 /* NutritionModel.swift */; };
 		C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4BC54762B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4BC54772B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
-		C4BC54792B6EF67000A435AC /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54782B6EF67000A435AC /* ScannerView.swift */; };
-		C4BC547A2B6EF67000A435AC /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54782B6EF67000A435AC /* ScannerView.swift */; };
-		C4BC547B2B6EF67000A435AC /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54782B6EF67000A435AC /* ScannerView.swift */; };
 		C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */; };
 		C4BC547E2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */; };
 		C4BC547F2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */; };
@@ -65,8 +66,10 @@
 		C45ADA3C2B69E27A001C34F9 /* NutriScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutriScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITests.swift; sourceTree = "<group>"; };
 		C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C47A29612B70838C002AD677 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionFactAnalyzer.swift; sourceTree = "<group>"; };
+		C47A29682B708B97002AD677 /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
 		C4BC54742B6EF30000A435AC /* Geist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.otf"; sourceTree = "<group>"; };
-		C4BC54782B6EF67000A435AC /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
 		C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47A29672B7088CC002AD677 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,16 +132,16 @@
 				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
-				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C45ADA292B69E279001C34F9 /* Assets.xcassets */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
 				C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */,
 				C4BC54742B6EF30000A435AC /* Geist-Regular.otf */,
 				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
-				C4BC54782B6EF67000A435AC /* ScannerView.swift */,
 				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
 				C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */,
 				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
+				C47A29612B70838C002AD677 /* APIManager.swift */,
+				C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -170,6 +174,8 @@
 		C4D58E222B6EEDB100E12C8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C45ADA272B69E277001C34F9 /* Item.swift */,
+				C47A29682B708B97002AD677 /* NutritionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +204,9 @@
 			dependencies = (
 			);
 			name = NutriScan;
+			packageProductDependencies = (
+				C47A29662B7088CC002AD677 /* Alamofire */,
+			);
 			productName = NutriScan;
 			productReference = C45ADA202B69E277001C34F9 /* NutriScan.app */;
 			productType = "com.apple.product-type.application";
@@ -270,6 +279,9 @@
 				Base,
 			);
 			mainGroup = C45ADA172B69E277001C34F9;
+			packageReferences = (
+				C47A29652B7088CC002AD677 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C45ADA212B69E277001C34F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,12 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47A29622B70838C002AD677 /* APIManager.swift in Sources */,
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
 				C4BC54812B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
-				C4BC54792B6EF67000A435AC /* ScannerView.swift in Sources */,
 				C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 				C45ADA282B69E277001C34F9 /* Item.swift in Sources */,
+				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
+				C47A29642B70882E002AD677 /* NutritionFactAnalyzer.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +371,6 @@
 			files = (
 				C45ADA372B69E27A001C34F9 /* NutriScanTests.swift in Sources */,
 				C4BC54862B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
-				C4BC547A2B6EF67000A435AC /* ScannerView.swift in Sources */,
 				C4BC547E2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 				C4BC54822B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
 			);
@@ -370,7 +383,6 @@
 				C4BC54832B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
 				C4BC54872B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 				C4BC547F2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
-				C4BC547B2B6EF67000A435AC /* ScannerView.swift in Sources */,
 				C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */,
 				C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */,
 			);
@@ -691,6 +703,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C47A29652B7088CC002AD677 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C47A29662B7088CC002AD677 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C47A29652B7088CC002AD677 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C45ADA182B69E277001C34F9 /* Project object */;
 }
