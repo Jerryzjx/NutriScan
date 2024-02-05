@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query(sort: \Item.timestamp) private var items: [Item]
 
     var body: some View {
         NavigationSplitView {
@@ -41,7 +41,8 @@ struct ContentView: View {
         }
     }
     /*
-     Font: Geist Variable ["GeistVariable-Regular", "GeistVariable-UltraLight", "GeistVariable-Light", "GeistVariable-Medium", "GeistVariable-SemiBold", "GeistVariable-Bold", "GeistVariable-Black", "GeistVariable-UltraBlack"]
+     Font: Geist Variable ["GeistVariable-Regular", "GeistVariable-UltraLight", "GeistVariable-Light", 
+     "GeistVariable-Medium", "GeistVariable-SemiBold", "GeistVariable-Bold", "GeistVariable-Black", "GeistVariable-UltraBlack"]
      */
     
     // Get our font name
