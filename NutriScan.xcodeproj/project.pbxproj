@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41270522B715A01003C6DDF /* ScannedItemView.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C41270522B715A01003C6DDF /* ScannedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedItemView.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
 				C47A29612B70838C002AD677 /* APIManager.swift */,
 				C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */,
+				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */,
 				C47A29622B70838C002AD677 /* APIManager.swift in Sources */,
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
 				C4BC54812B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,

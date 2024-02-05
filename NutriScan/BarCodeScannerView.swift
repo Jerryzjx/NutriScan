@@ -9,57 +9,38 @@ import SwiftUI
 import VisionKit
 
 struct BarCodeScannerView: View {
-    
     @EnvironmentObject var vm: ScannerViewModel
     
     var body: some View {
-        switch vm.dataScannerAccessStatus {
-        case .scannerAvaliable:
-            mainView
-        case .cameraNotAvaliable:
-            Text("Your device does not have a camera")
-        case .scannerNotAvaliable:
-            Text("Scanner is not avaliable")
-        case .cameraAccessNotGranted:
-            Text("Please grant camera access in settings")
-        case .notDetermined:
-            Text("Requesting camera access")
-        }
-    }
-    
-    private var mainView: some View {
-        DataScannerView(
-            recognizedData: $vm.recognizedData, viewModel: _vm)
-        .background { Color.gray.opacity(0.3) }
-                .ignoresSafeArea()
-              //  .id(vm.dataScannerViewId)
-                .sheet(isPresented: .constant(true)) {
-                    bottomContainerView
-                        .background(.ultraThinMaterial)
-                        .presentationDetents([.medium, .fraction(0.25)])
-                        .presentationDragIndicator(.visible)
-                        .interactiveDismissDisabled()
-                        .onAppear {
-                            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                                  let controller = windowScene.windows.first?.rootViewController?.presentedViewController else {
-                                return
-                            }
-                            controller.view.backgroundColor = .clear
-                        }
+        NavigationStack {
+            VStack {
+                if !vm.showScannedItemView { // Only show DataScannerView if ScannedItemView is not presented
+                    switch vm.dataScannerAccessStatus {
+                    case .scannerAvaliable:
+                        DataScannerView(
+                            recognizedData: $vm.recognizedData,
+                            viewModel: _vm
+                        )
+                        .background(Color.gray.opacity(0.3))
+                        .ignoresSafeArea()
+                    case .cameraNotAvaliable:
+                        Text("Your device does not have a camera")
+                    case .scannerNotAvaliable:
+                        Text("Scanner is not available")
+                    case .cameraAccessNotGranted:
+                        Text("Please grant camera access in settings")
+                    case .notDetermined:
+                        Text("Requesting camera access")
+                    }
+                } else {
+                    // Display a placeholder or empty view when the camera is "frozen"
+                    Color.gray.opacity(0.3)
+                        .ignoresSafeArea()
                 }
             }
-    
-    private var bottomContainerView: some View {
-        VStack {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 16) {
-                    ForEach(vm.itemDetails, id: \.self) { itemDetail in
-                                        Text(itemDetail)
-                                    }
-                }
-                .padding()
+            .sheet(isPresented: $vm.showScannedItemView) {
+                ScannedItemView(vm: vm)
             }
         }
     }
 }
-

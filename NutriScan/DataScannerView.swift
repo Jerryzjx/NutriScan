@@ -74,6 +74,7 @@ struct DataScannerView: UIViewControllerRepresentable {
         }
     
     func dataScanner(_ dataScanner: DataScannerViewController, didRemove removedItems: [RecognizedItem], allItems: [RecognizedItem]) {
+        
         print("didRemove: \(removedItems)")
     }
     

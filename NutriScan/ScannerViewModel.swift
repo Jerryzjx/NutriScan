@@ -30,8 +30,9 @@ final class ScannerViewModel: ObservableObject {
     
     @Published var dataScannerAccessStatus: DataScannerAccessStatusType = .notDetermined
     @Published var recognizedData: [RecognizedItem] = []
-    @Published var scanType: ScanType = .barcode
-    @Published var itemDetails: [String] = []
+    //@Published var scanType: ScanType = .barcode
+    @Published var itemDetails: [FoodItem] = []
+    @Published var showScannedItemView: Bool = false
     
     private var isScannerAvaliable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported
@@ -67,18 +68,21 @@ final class ScannerViewModel: ObservableObject {
     }
     
     func fetchDataForScannedBarcode(_ barcode: String) {
-            Task {
-                do {
-                    let fetchedItem = try await APIManager.shared.searchItem(with: barcode)
-                    DispatchQueue.main.async {
-                        // Update your itemDetails or recognizedData here based on the API response
-                        self.itemDetails.append("Fetched item detail: \(fetchedItem)") // Simplified for demonstration
-                    }
-                } catch {
-                    print("Error fetching item details: \(error)")
+        Task {
+            do {
+                let fetchedItem = try await APIManager.shared.searchItem(with: barcode)
+                DispatchQueue.main.async {
+                    // Update your itemDetails based on the API response
+                    // This is simplified; you'd likely want to update with actual item details
+                    self.itemDetails.append(contentsOf: fetchedItem)
+                    // Trigger view transition
+                    self.showScannedItemView = true
                 }
+            } catch {
+                print("Error fetching item details: \(error)")
             }
         }
+    }
 
         // Assuming you have a function to process recognized items
         func processRecognizedItems() {
