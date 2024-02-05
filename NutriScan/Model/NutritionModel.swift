@@ -12,22 +12,43 @@ struct FoodsResponse: Decodable {
 }
 
 struct FoodItem: Decodable {
-    let food_name: String
-    let brand_name: String?
-    let serving_qty: Int?
-    let serving_unit: String?
-    let serving_weight_grams: Double?
-    let nf_metric_qty: Double?
-    let nf_metric_uom: String?
-    let nf_calories: Double?
-    let nf_total_fat: Double?
-    let nf_saturated_fat: Double?
-    let nf_cholesterol: Double?
-    let nf_sodium: Double?
-    let nf_total_carbohydrate: Double?
-    let nf_dietary_fiber: Double?
-    let nf_sugars: Double?
-    let nf_protein: Double?
-    let nf_potassium: Double?
-    let nf_p: Double?
+    let foodName: String
+    let brandName: String?
+    let servingQty: Int?
+    let servingUnit: String?
+    let servingWeightGrams: Double?
+    let nfMetricQty: Double?
+    let nfMetricUom: String?
+    let nfCalories: Double?
+    let nfTotalFat: Double?
+    let nfSaturatedFat: Double?
+    let nfCholesterol: Double?
+    let nfSodium: Double?
+    let nfTotalCarbohydrate: Double?
+    let nfDietaryFiber: Double?
+    let nfSugars: Double?
+    let nfProtein: Double?
+    let nfPotassium: Double?
+    let nfP: Double?
+
+    enum CodingKeys: String, CodingKey {
+        case foodName = "food_name"
+        case brandName = "brand_name"
+        case servingQty = "serving_qty"
+        case servingUnit = "serving_unit"
+        case servingWeightGrams = "serving_weight_grams"
+        case nfMetricQty = "nf_metric_qty"
+        case nfMetricUom = "nf_metric_uom"
+        case nfCalories = "nf_calories"
+        case nfTotalFat = "nf_total_fat"
+        case nfSaturatedFat = "nf_saturated_fat"
+        case nfCholesterol = "nf_cholesterol"
+        case nfSodium = "nf_sodium"
+        case nfTotalCarbohydrate = "nf_total_carbohydrate"
+        case nfDietaryFiber = "nf_dietary_fiber"
+        case nfSugars = "nf_sugars"
+        case nfProtein = "nf_protein"
+        case nfPotassium = "nf_potassium"
+        case nfP = "nf_p"
+    }
 }
