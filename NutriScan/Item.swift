@@ -9,11 +9,10 @@ import Foundation
 import SwiftData
 
 @Model
-final class Item {
+class Item {
     var timestamp: Date
     var name: String
     var brandName: String
-    
     
     init(timestamp: Date, name: String, brandName: String) {
         self.timestamp = timestamp
