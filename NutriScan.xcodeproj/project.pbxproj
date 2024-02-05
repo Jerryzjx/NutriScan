@@ -128,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D58E2C2B6EF08800E12C8B /* Info.plist */,
+				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C4D58E232B6EEDB900E12C8B /* View */,
 				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
@@ -174,7 +175,6 @@
 		C4D58E222B6EEDB100E12C8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C47A29682B708B97002AD677 /* NutritionModel.swift */,
 			);
 			path = Model;
@@ -197,7 +197,6 @@
 				C45ADA1C2B69E277001C34F9 /* Sources */,
 				C45ADA1D2B69E277001C34F9 /* Frameworks */,
 				C45ADA1E2B69E277001C34F9 /* Resources */,
-				C4A69E072B7003D200A5F73B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -325,28 +324,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C4A69E072B7003D200A5F73B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C45ADA1C2B69E277001C34F9 /* Sources */ = {
@@ -533,7 +510,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
@@ -565,7 +542,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";

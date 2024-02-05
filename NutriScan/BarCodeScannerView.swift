@@ -29,7 +29,7 @@ struct BarCodeScannerView: View {
     
     private var mainView: some View {
         DataScannerView(
-            recognizedData: $vm.recognizedData)
+            recognizedData: $vm.recognizedData, viewModel: _vm)
         .background { Color.gray.opacity(0.3) }
                 .ignoresSafeArea()
               //  .id(vm.dataScannerViewId)
@@ -53,18 +53,9 @@ struct BarCodeScannerView: View {
         VStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 16) {
-                    ForEach(vm.recognizedData) { item in
-                        switch item {
-                        case .barcode(let barcode):
-                            Text(barcode.payloadStringValue ?? "Unknown barcode")
-                            
-                        case .text(let text):
-                            Text(text.transcript)
-                            
-                        @unknown default:
-                            Text("Unknown")
-                        }
-                    }
+                    ForEach(vm.itemDetails, id: \.self) { itemDetail in
+                                        Text(itemDetail)
+                                    }
                 }
                 .padding()
             }
@@ -72,6 +63,3 @@ struct BarCodeScannerView: View {
     }
 }
 
-#Preview {
-    BarCodeScannerView()
-}
