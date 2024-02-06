@@ -10,6 +10,8 @@
 		C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41270522B715A01003C6DDF /* ScannedItemView.swift */; };
 		C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417367F2B71B5DC0025CC03 /* HomeView.swift */; };
 		C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736812B71B5F20025CC03 /* WelcomeView.swift */; };
+		C41736862B71CC620025CC03 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736852B71CC620025CC03 /* BottomButtonView.swift */; };
+		C41736882B71CC740025CC03 /* BottomTabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736872B71CC740025CC03 /* BottomTabMenu.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -62,6 +64,8 @@
 		C417367E2B71B5C80025CC03 /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeistVariableVF.ttf; sourceTree = "<group>"; };
 		C417367F2B71B5DC0025CC03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C41736812B71B5F20025CC03 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		C41736852B71CC620025CC03 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		C41736872B71CC740025CC03 /* BottomTabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabMenu.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
 				C417367F2B71B5DC0025CC03 /* HomeView.swift */,
 				C41736812B71B5F20025CC03 /* WelcomeView.swift */,
+				C41736852B71CC620025CC03 /* BottomButtonView.swift */,
+				C41736872B71CC740025CC03 /* BottomTabMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,10 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */,
+				C41736882B71CC740025CC03 /* BottomTabMenu.swift in Sources */,
 				C47A29622B70838C002AD677 /* APIManager.swift in Sources */,
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
 				C4BC54812B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
 				C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
+				C41736862B71CC620025CC03 /* BottomButtonView.swift in Sources */,
 				C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */,
 				C45ADA282B69E277001C34F9 /* Item.swift in Sources */,
 				C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */,

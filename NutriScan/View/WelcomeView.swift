@@ -39,23 +39,23 @@ struct BottomWaveShape: Shape {
         var path = Path()
         
         // Start at the bottom right corner
-            path.move(to: CGPoint(x: rect.maxX, y: rect.maxY))
-            // Draw a line to the top right corner
-            path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
-            // Draw a line to the top left corner, slightly below the top edge to mimic the original elevation
-            path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + 50))
-            // Draw a line back to the bottom left corner
-            path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-            
-            // Move to the top right corner to start the curve
-            path.move(to: CGPoint(x: rect.maxX, y: rect.minY))
-            // Add a curve to the top left corner, slightly below the top edge, mirroring the original curve but inverted vertically
-            path.addCurve(to: CGPoint(x: rect.minX, y: rect.minY + 50),
-                          // Mirror the control points across the x-coordinate and adjust vertically for the mirrored curve
-                          control1: CGPoint(x: rect.maxX - rect.width * 0.25, y: rect.minY - rect.height * 0.5),
-                          control2: CGPoint(x: rect.minX + rect.width * 0.25, y: rect.minY))
-            
-            return path
+        path.move(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        // Draw a line to the top right corner
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        // Draw a line to the top left corner, slightly below the top edge to mimic the original elevation
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + 50))
+        // Draw a line back to the bottom left corner
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        
+        // Move to the top right corner to start the curve
+        path.move(to: CGPoint(x: rect.maxX, y: rect.minY))
+        // Add a curve to the top left corner, slightly below the top edge, mirroring the original curve but inverted vertically
+        path.addCurve(to: CGPoint(x: rect.minX, y: rect.minY + 50),
+                      // Mirror the control points across the x-coordinate and adjust vertically for the mirrored curve
+                      control1: CGPoint(x: rect.maxX - rect.width * 0.25, y: rect.minY - rect.height * 0.5),
+                      control2: CGPoint(x: rect.minX + rect.width * 0.25, y: rect.minY))
+        
+        return path
     }
     
 }
@@ -65,56 +65,71 @@ struct WelcomeView: View {
     var bottomShapeHeight: CGFloat = 100
     
     var body: some View {
-        
-        VStack {
-            ZStack {
-                WaveShape()
-                    .fill(Color("EmeraldL"))
-                    .opacity(0.4)
-                    .frame(height: topShapeHeight)
-                    .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
-                
-                WaveShape()
-                    .fill(Color("EmeraldL"))
-                    .frame(height: topShapeHeight)
-                    .offset(x: 0, y: -20.0)
-                    .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
-            }
-            
-            Spacer()
-            Spacer()
-            Spacer()
+        NavigationView {
             VStack {
-                Text("[NutriScan]")
-                    .font(.system(size: 44))
-                    .fontWeight(.heavy)
-                    .foregroundStyle(
-                        LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing)
-                    )
-            }
-            .padding(5)
-            
-            VStack (spacing: 5){
-                Text("Scan. Understand.")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("Eat Smart.")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundStyle(
-                        LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing)
-                    )
-            }
-            Spacer()
-            Spacer()
-            
-            
-            Button(action: {
-                // Navigate to the scanner view
-            }) {
-                Text("Get Started")
-                    .font(.title)
-                    .fontWeight(.bold)
+                ZStack {
+                    WaveShape()
+                        .fill(Color("EmeraldL"))
+                        .opacity(0.4)
+                        .frame(height: topShapeHeight)
+                        .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
+                    
+                    WaveShape()
+                        .fill(Color("EmeraldL"))
+                        .frame(height: topShapeHeight)
+                        .offset(x: 0, y: -20.0)
+                        .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
+                }
+                
+                Spacer()
+                Spacer()
+                Spacer()
+                VStack {
+                    Text("[NutriScan]")
+                        .font(.system(size: 52))
+                        .fontWeight(.heavy)
+                        .foregroundStyle(
+                            LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing)
+                        )
+                }
+                .padding(7)
+                
+                VStack (spacing: 6){
+                    HStack (spacing: 4){
+                        Image(systemName: "barcode.viewfinder")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Text("Scan. Understand.")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
+                    
+                    HStack (spacing: 4){
+                        Image(systemName: "leaf")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("EmeraldR"))
+                        Text("Eat Smart.")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundStyle(
+                                LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing)
+                            )
+                    }
+                }
+                Spacer()
+                Spacer()
+                
+                
+                NavigationLink(destination: HomeView()) { // This is where you navigate to HomeView
+                    HStack(spacing: 7) {
+                        Image(systemName: "arrowtriangle.right.fill")
+                            .font(Font.title.weight(.bold))
+                        
+                        Text("Get Started")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(
@@ -122,26 +137,27 @@ struct WelcomeView: View {
                     )
                     .foregroundColor(.white)
                     .cornerRadius(25)
-            }
-            .padding(40)
-            .padding(.bottom, 35)
-            
-            ZStack {
-                BottomWaveShape()
-                    .fill(LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing))
-                    .opacity(0.4)
-                    .frame(height: bottomShapeHeight)
-                    .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
+                }
+                .padding(40)
+                .padding(.bottom, 35)
                 
-                BottomWaveShape()
-                    .fill(LinearGradient(colors: [Color("EmeraldL"), Color("EmeraldR")], startPoint: .leading, endPoint: .trailing))
-                    .opacity(0.95)
-                    .frame(height: bottomShapeHeight)
-                    .offset(x: 0, y: 20.0)
-                    .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
+                ZStack {
+                    BottomWaveShape()
+                        .fill(LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing))
+                        .opacity(0.4)
+                        .frame(height: bottomShapeHeight)
+                        .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
+                    
+                    BottomWaveShape()
+                        .fill(LinearGradient(colors: [Color("EmeraldL"), Color("EmeraldR")], startPoint: .leading, endPoint: .trailing))
+                        .opacity(0.95)
+                        .frame(height: bottomShapeHeight)
+                        .offset(x: 0, y: 20.0)
+                        .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
+                }
             }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 
