@@ -63,6 +63,7 @@ struct BottomWaveShape: Shape {
 struct WelcomeView: View {
     var topShapeHeight: CGFloat = 175
     var bottomShapeHeight: CGFloat = 100
+    @EnvironmentObject var vm: ScannerViewModel
     
     var body: some View {
         NavigationView {
@@ -121,7 +122,7 @@ struct WelcomeView: View {
                 Spacer()
                 
                 
-                NavigationLink(destination: HomeView()) { // This is where you navigate to HomeView
+                NavigationLink(destination: HomeView().environmentObject(vm)) { // This is where you navigate to HomeView
                     HStack(spacing: 7) {
                         Image(systemName: "arrowtriangle.right.fill")
                             .font(Font.title.weight(.bold))
