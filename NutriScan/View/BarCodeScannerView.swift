@@ -24,7 +24,7 @@ struct BarCodeScannerView: View {
                             viewModel: _vm
                         ).id(vm.needsRefresh ? UUID().uuidString : "staticId")
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // Adjust delay as needed
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { // Adjust delay as needed
                                     vm.isScanningEnabled = true
                                 vm.refreshScannerView()
                                 }
