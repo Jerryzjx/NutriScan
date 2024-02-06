@@ -67,3 +67,4 @@ fastlane/test_output
 
 NutriScan/ScannerView.swift
 NutriScan/APIManager.swift
+NutriScan/Utilities/APIManager.swift
