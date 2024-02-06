@@ -1,7 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/xcode,swift
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift
 
-<<<<<<< Updated upstream
 ### Swift ###
 # Xcode
 #
@@ -65,7 +64,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
-=======
+
 NutriScan/ScannerView.swift
 NutriScan/APIManager.swift
->>>>>>> Stashed changes
