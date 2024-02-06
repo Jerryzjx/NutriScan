@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var vm: ScannerViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            BottomButtonView(filter: .history)
+                .tabItem {
+                    Label("History", systemImage: "list.bullet.clipboard")
+                }
+            
+            BarCodeScannerView()
+                .environmentObject(vm)
+                
+                .task {
+                    await vm.requestDataScannerAccessStatus()
+                }// Your barcode scanner view
+                .tabItem {
+                    Label("Scan", systemImage: "barcode.viewfinder")
+                }
+            
+            BottomButtonView(filter: .settings)
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+            
+    
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
