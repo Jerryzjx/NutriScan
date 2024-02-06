@@ -14,15 +14,29 @@ struct BarCodeScannerView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                
+                
                 if !vm.showScannedItemView { // Only show DataScannerView if ScannedItemView is not presented
                     switch vm.dataScannerAccessStatus {
                     case .scannerAvaliable:
                         DataScannerView(
                             recognizedData: $vm.recognizedData,
                             viewModel: _vm
-                        )
+                        ).id(vm.needsRefresh ? UUID().uuidString : "staticId")
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { // Adjust delay as needed
+                                    vm.isScanningEnabled = true
+                                vm.refreshScannerView()
+                                }
+                            }
+                        .onDisappear {
+                            DispatchQueue.main.async {
+                                    vm.isScanningEnabled = false
+                                vm.refreshScannerView()
+                                }
+                            }
                         .background(Color.gray.opacity(0.3))
-                        .ignoresSafeArea()
+                        .ignoresSafeArea(edges: .top)
                     case .cameraNotAvaliable:
                         Text("Your device does not have a camera")
                     case .scannerNotAvaliable:
@@ -35,7 +49,7 @@ struct BarCodeScannerView: View {
                 } else {
                     // Display a placeholder or empty view when the camera is "frozen"
                     Color.gray.opacity(0.3)
-                        .ignoresSafeArea()
+                        .ignoresSafeArea(edges: .top)
                 }
             }
             .sheet(isPresented: $vm.showScannedItemView) {

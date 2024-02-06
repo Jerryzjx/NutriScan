@@ -30,9 +30,21 @@ final class ScannerViewModel: ObservableObject {
     
     @Published var dataScannerAccessStatus: DataScannerAccessStatusType = .notDetermined
     @Published var recognizedData: [RecognizedItem] = []
-    //@Published var scanType: ScanType = .barcode
+    @Published var scanType: ScanType = .barcode
     @Published var itemDetails: [FoodItem] = []
     @Published var showScannedItemView: Bool = false
+    @Published var isScanningEnabled: Bool = false
+    @Published var needsRefresh: Bool = false
+
+    func refreshScannerView() {
+        needsRefresh.toggle()
+    }
+    
+    var dataScannerViewId: Int {
+        var hasher = Hasher()
+        hasher.combine(scanType)
+        return hasher.finalize()
+    }
     
     private var isScannerAvaliable: Bool {
         DataScannerViewController.isAvailable && DataScannerViewController.isSupported
