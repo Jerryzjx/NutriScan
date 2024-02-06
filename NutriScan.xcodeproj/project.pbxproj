@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41270522B715A01003C6DDF /* ScannedItemView.swift */; };
+		C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417367F2B71B5DC0025CC03 /* HomeView.swift */; };
+		C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736812B71B5F20025CC03 /* WelcomeView.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -57,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		C41270522B715A01003C6DDF /* ScannedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedItemView.swift; sourceTree = "<group>"; };
+		C417367E2B71B5C80025CC03 /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeistVariableVF.ttf; sourceTree = "<group>"; };
+		C417367F2B71B5DC0025CC03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C41736812B71B5F20025CC03 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +111,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C41736792B71B56A0025CC03 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C417367C2B71B58E0025CC03 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C47A29612B70838C002AD677 /* APIManager.swift */,
+				C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C417367D2B71B5BC0025CC03 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C45ADA292B69E279001C34F9 /* Assets.xcassets */,
+				C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */,
+				C4BC54742B6EF30000A435AC /* Geist-Regular.otf */,
+				C417367E2B71B5C80025CC03 /* GeistVariableVF.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		C45ADA172B69E277001C34F9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,23 +162,16 @@
 		C45ADA222B69E277001C34F9 /* NutriScan */ = {
 			isa = PBXGroup;
 			children = (
+				C417367D2B71B5BC0025CC03 /* Assets */,
+				C417367C2B71B58E0025CC03 /* Utilities */,
+				C41736792B71B56A0025CC03 /* ViewModel */,
 				C4D58E2C2B6EF08800E12C8B /* Info.plist */,
-				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C4D58E232B6EEDB900E12C8B /* View */,
 				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
-				C45ADA292B69E279001C34F9 /* Assets.xcassets */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
-				C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */,
-				C4BC54742B6EF30000A435AC /* Geist-Regular.otf */,
 				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
-				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
-				C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */,
-				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
-				C47A29612B70838C002AD677 /* APIManager.swift */,
-				C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */,
-				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -178,6 +204,7 @@
 		C4D58E222B6EEDB100E12C8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C47A29682B708B97002AD677 /* NutritionModel.swift */,
 			);
 			path = Model;
@@ -186,6 +213,11 @@
 		C4D58E232B6EEDB900E12C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
+				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
+				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
+				C417367F2B71B5DC0025CC03 /* HomeView.swift */,
+				C41736812B71B5F20025CC03 /* WelcomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,7 +370,9 @@
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
 				C4BC54812B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
 				C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
+				C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */,
 				C45ADA282B69E277001C34F9 /* Item.swift in Sources */,
+				C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */,
 				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
 				C47A29642B70882E002AD677 /* NutritionFactAnalyzer.swift in Sources */,
