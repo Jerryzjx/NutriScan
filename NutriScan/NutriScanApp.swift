@@ -28,11 +28,14 @@ struct NutriScanApp: App {
 
     var body: some Scene {
         WindowGroup {
+            /*
             BarCodeScannerView()
                 .environmentObject(vm)
                 .task {
                     await vm.requestDataScannerAccessStatus()
                 }
+             */
+            WelcomeView()
         }
         .modelContainer(sharedModelContainer)
     }
