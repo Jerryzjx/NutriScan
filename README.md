@@ -1,4 +1,4 @@
-<h1 align="center"> NutriScan </h1> <br>
+<h1 align="center"> NutriScan </h1>
 <p align="center">
   <a href="https://jerryzjx.com">
     <img alt="NutriScan" title="NutriScan" src="https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9080.jpg" > 
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <h1 align="center"> Scan. Understand. Eat Smart </h1> <br>
+  <h1 align="center"> Scan. Understand. Eat Smart </h1>
 
   
 </p>
