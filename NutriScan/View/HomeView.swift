@@ -11,7 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var vm: ScannerViewModel
     var body: some View {
         TabView {
-            BottomButtonView(filter: .history)
+            ContentView()
                 .tabItem {
                     Label("History", systemImage: "list.bullet.clipboard")
                 }
