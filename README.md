@@ -1,12 +1,12 @@
 <h1 align="center"> NutriScan </h1> <br>
 <p align="center">
   <a href="https://jerryzjx.com">
-    <img alt="NutriList" title="NutriList" src="https://github.com/Jerryzjx/NutriList/blob/main/External/logo.png" width="250" height="250"> 
+    <img alt="NutriScan" title="NutriScan" src="https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9080.jpg" > 
   </a>
 </p>
 
 <p align="center">
-  Scan. Understand. Eat Smart.
+  <h1 align="center"> Scan. Understand. Eat Smart </h1> <br>
 
   
 </p>
@@ -38,22 +38,14 @@
 
 If you are interested in testing the app, please feel free to email me: [![Email Jerry](https://img.shields.io/badge/Email-jerryz.zjx@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jerryz.zjx@gmail.com)
 
-Currently Building a Bar Code Scanner function to check for any potential unhealthy ingredient in any product, with just a scan. Check out NutriScan!
+Check out NutriList! A Smart Grocery List!
 
 ## Features:
-- User Authentication with Supabase using Email or Apple Sign In
-- Create grocery items with classification powered by Cohere API
-- Store & Fetch user items from Supabase Database
-- Minimalist UI Design
-- Extensive Unit Test with 71% Code coverage
+- Coming Soon!
 
 <p align="left">
-  <img src = "https://github.com/Jerryzjx/NutriList/blob/main/External/IMG_9031.PNG" width=350>
+  <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9078.PNG" width=350>
   
-  <img src = "https://github.com/Jerryzjx/NutriList/blob/main/External/IMG_9034.PNG" width=350>
- 
-  <img src = "https://github.com/Jerryzjx/NutriList/blob/main/External/IMG_9032.PNG" width=350>
-  
-  <img src = "https://github.com/Jerryzjx/NutriList/blob/main/External/IMG_9033.PNG" width=350>
+  <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9079.PNG" width=350>
   
 </p>
