@@ -21,7 +21,6 @@
 		C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */; };
 		C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */; };
 		C47A29622B70838C002AD677 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29612B70838C002AD677 /* APIManager.swift */; };
-		C47A29642B70882E002AD677 /* NutritionFactAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */; };
 		C47A29672B7088CC002AD677 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C47A29662B7088CC002AD677 /* Alamofire */; };
 		C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29682B708B97002AD677 /* NutritionModel.swift */; };
 		C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
@@ -78,7 +77,6 @@
 		C45ADA402B69E27A001C34F9 /* NutriScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITests.swift; sourceTree = "<group>"; };
 		C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C47A29612B70838C002AD677 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionFactAnalyzer.swift; sourceTree = "<group>"; };
 		C47A29682B708B97002AD677 /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
 		C4BC54742B6EF30000A435AC /* Geist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.otf"; sourceTree = "<group>"; };
 		C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				C47A29612B70838C002AD677 /* APIManager.swift */,
-				C47A29632B70882E002AD677 /* NutritionFactAnalyzer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -383,7 +380,6 @@
 				C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */,
 				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
-				C47A29642B70882E002AD677 /* NutritionFactAnalyzer.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
