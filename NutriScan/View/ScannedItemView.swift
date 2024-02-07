@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScannedItemView: View {
     @ObservedObject var vm: ScannerViewModel
-    //@Environment(\.presentationMode) var presentationMode
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
         VStack {
@@ -21,26 +21,30 @@ struct ScannedItemView: View {
     }
     
     private var toolbar: some View {
-        HStack {
-            Button(action: {
-                discardScan()
-            }) {
-                Text("Discard")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.red)
-            }
-            
-            Spacer()
-            
-            Button(action: {
-                saveScan()
-            }) {
-                Text("Save")
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("EmeraldL"))
+        VStack {
+            if let foodItem = vm.itemDetails.first {
+                HStack {
+                    Button(action: {
+                        discardScan()
+                    }) {
+                        Text("Discard")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.red)
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        saveScan(FoodItem: foodItem)
+                    }) {
+                        Text("Save")
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("EmeraldL"))
+                    }
+                }
+                .padding()
             }
         }
-        .padding()
     }
     
     private var bottomContainerView: some View {
@@ -242,14 +246,18 @@ struct ScannedItemView: View {
     }
     
     
-    private func saveScan() {
+    private func saveScan(FoodItem foodItem: FoodItem) {
         // Implement saving logic here, possibly updating the SwiftData model
-        // presentationMode.wrappedValue.dismiss()
+        withAnimation {
+            let newItem = Item(foodItem: foodItem)
+            modelContext.insert(newItem)
+            vm.showScannedItemView = false
+        }
     }
     
     private func discardScan() {
         // Implement discard logic here if needed, like clearing temporary data
-        // presentationMode.wrappedValue.dismiss()
+        vm.showScannedItemView = false
     }
 }
 
