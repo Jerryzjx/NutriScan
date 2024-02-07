@@ -65,5 +65,3 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-NutriScan/ScannerView.swift
-NutriScan/Utilities/APIManager.swift
