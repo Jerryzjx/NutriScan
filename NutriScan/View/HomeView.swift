@@ -33,6 +33,7 @@ struct HomeView: View {
             
     
         }
+        .accentColor(Color("EmeraldL"))
         .navigationBarBackButtonHidden(true)
     }
 }

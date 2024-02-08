@@ -8,38 +8,93 @@
 import SwiftUI
 import SwiftData
 
+struct WaveShapeMain: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        // Start at the top left corner
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        // Draw a line to the bottom left corner
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        // Draw a line to the bottom right corner, slightly above the bottom edge
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - 50))
+        // Draw a line back to the top right corner
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        
+        // Move back to the bottom left corner to start the curve
+        path.move(to: CGPoint(x: rect.minX, y: rect.maxY))
+        
+        // Add a curve to the bottom right corner, slightly above the bottom edge
+        // Adjust control points to bring the curve's center more towards the center
+        path.addCurve(to: CGPoint(x: rect.maxX, y: rect.maxY - 50),
+                      control1: CGPoint(x: rect.minX + rect.width * 0.35, y: rect.maxY + rect.height * 0.22), // Control point 1 moved towards center
+                      control2: CGPoint(x: rect.maxX - rect.width * 0.35, y: rect.maxY + rect.height * 0.22)) // Control point 2 mirrored
+        
+        return path
+    }
+    
+}
+
+
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
 
     var body: some View {
-        VStack(alignment: .leading){
-            Text("Scanned History")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            NavigationSplitView {
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            ItemDetailView(for: item)
-                            
-                        } label: {
-                            VStack(alignment: .leading) {
-                                Text(item.foodName) // Display the food name
-                                    .font(.headline)
-                                Text(item.brandName ?? "") // Display the brand name
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray) // Optional: Make the brand name less prominent
-                            }
-                        }
+        NavigationStack {
+            ZStack {
+                VStack(alignment: .leading){
+                    ZStack {
+                        WaveShapeMain()
+                            .fill(Color("EmeraldL"))
+                            .opacity(0.4)
+                            .frame(height: 170)
+                            .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
+                        
+                        WaveShapeMain()
+                            .fill(Color("EmeraldL"))
+                            .opacity(0.75)
+                            .frame(height: 170)
+                            .offset(x: 0, y: -20.0)
+                            .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
                     }
-                    .onDelete(perform: deleteItems)
+                    List {
+                        ForEach(items) { item in
+                            NavigationLink {
+                                ItemDetailView(for: item)
+                                
+                                
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Text(item.foodName) // Display the food name
+                                        .font(.headline)
+                                    Text(item.brandName ?? "") // Display the brand name
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            .padding(7)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(.regularMaterial)
+                                            .padding(5)
+                                    )
+                        }
+                        .onDelete(perform: deleteItems)
+                    }
+                    .background(Color(uiColor: .systemBackground))
+                    .padding(10)
+                    .padding(.top, 30)
+                    
                 }
-            } detail: {
-                Text("Select an item")
+                .ignoresSafeArea()
+                .navigationTitle("Scanned History")
+                
             }
+            .ignoresSafeArea()
         }
-        .padding()
     }
     /*
      Font: Geist Variable ["GeistVariable-Regular", "GeistVariable-UltraLight", "GeistVariable-Light", 
@@ -171,6 +226,7 @@ struct ContentView: View {
                 }
                 .padding(10)
                 .padding(.vertical, 4)
+                
             }
         
     }
