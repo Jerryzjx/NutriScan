@@ -69,6 +69,7 @@ struct WelcomeView: View {
         NavigationView {
             VStack {
                 ZStack {
+                    
                     WaveShape()
                         .fill(Color("EmeraldL"))
                         .opacity(0.4)
