@@ -19,6 +19,7 @@
 		C41D65742B77F9F10029A6AE /* LogFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65732B77F9F10029A6AE /* LogFoodView.swift */; };
 		C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65752B77FF460029A6AE /* DetailChartView.swift */; };
 		C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65772B78055A0029A6AE /* NutrientCalculator.swift */; };
+		C41D657A2B7820700029A6AE /* ManualLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65792B7820700029A6AE /* ManualLogView.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -40,8 +41,6 @@
 		C4BC54822B6F1B6400A435AC /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */; };
 		C4BC54832B6F1B6400A435AC /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */; };
 		C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */; };
-		C4BC54862B6F1E6B00A435AC /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */; };
-		C4BC54872B6F1E6B00A435AC /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */; };
 		C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */; };
 		C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
 		C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
@@ -80,6 +79,7 @@
 		C41D65732B77F9F10029A6AE /* LogFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFoodView.swift; sourceTree = "<group>"; };
 		C41D65752B77FF460029A6AE /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
 		C41D65772B78055A0029A6AE /* NutrientCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientCalculator.swift; sourceTree = "<group>"; };
+		C41D65792B7820700029A6AE /* ManualLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLogView.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +134,7 @@
 				C40564472B76ECE3002A2BFC /* RingShape.swift */,
 				C40564492B76EE3E002A2BFC /* RingView.swift */,
 				C41D65772B78055A0029A6AE /* NutrientCalculator.swift */,
+				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -243,7 +244,6 @@
 			children = (
 				C40564462B76ECB3002A2BFC /* UI Components */,
 				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
-				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
 				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
 				C417367F2B71B5DC0025CC03 /* HomeView.swift */,
 				C41736812B71B5F20025CC03 /* WelcomeView.swift */,
@@ -252,6 +252,7 @@
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C41D65732B77F9F10029A6AE /* LogFoodView.swift */,
 				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
+				C41D65792B7820700029A6AE /* ManualLogView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,6 +415,7 @@
 				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
 				C40564482B76ECE3002A2BFC /* RingShape.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
+				C41D657A2B7820700029A6AE /* ManualLogView.swift in Sources */,
 				C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */,
 				C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
@@ -427,7 +429,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45ADA372B69E27A001C34F9 /* NutriScanTests.swift in Sources */,
-				C4BC54862B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 				C4BC547E2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 				C4BC54822B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
 			);
@@ -438,7 +439,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4BC54832B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
-				C4BC54872B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 				C4BC547F2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 				C45ADA432B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift in Sources */,
 				C45ADA412B69E27A001C34F9 /* NutriScanUITests.swift in Sources */,

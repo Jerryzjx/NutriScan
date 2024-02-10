@@ -21,12 +21,7 @@ struct HomeView: View {
                     Label("History", systemImage: "list.bullet.clipboard")
                 }
             
-            BarCodeScannerView()
-                .environmentObject(vm)
-                
-                .task {
-                    await vm.requestDataScannerAccessStatus()
-                }// Your barcode scanner view
+            LogFoodView()
                 .tabItem {
                     Label("Log", systemImage: "plus.app.fill")
                 }

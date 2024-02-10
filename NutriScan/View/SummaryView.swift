@@ -90,11 +90,11 @@ struct SummaryView: View {
                             }
                             Spacer()
                             NavigationLink(destination: DetailChartView(nutritionType: "Carbs", nutriToday: todaysNutrition.carbs, nutriUnit: "g")) {
-                                nutriDisplayView(name: "Carbs",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
+                                nutriDisplayView(name: "Carbs",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletL"), fgColors: [Color("VioletL"), Color("VioletR")])
                             }
                             Spacer()
                             NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g")) {
-                                nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SunsetR"), fgColors: [Color("SunsetL"), Color("SunsetR")])
+                                nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SunsetL"), fgColors: [Color("SunsetL"), Color("SunsetR")])
                             }
                             Spacer()
                             Spacer()
@@ -120,13 +120,15 @@ struct SummaryView: View {
     
     private func nutriDisplayView(name: String, unit: String, nutriToday: Double, nutriConst: Double, bgColor: Color, fgColors: [Color]) -> some View {
         
+        let iconName = name == "Calories" ? "flame.fill" : "carrot.fill"
+        
         return HStack ( spacing: 2){
             
             VStack(alignment: .leading, spacing: 3) {
                 
                 VStack (alignment: .leading){
                     HStack {
-                        Image(systemName: "carrot.fill")
+                        Image(systemName: iconName)
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(bgColor)
