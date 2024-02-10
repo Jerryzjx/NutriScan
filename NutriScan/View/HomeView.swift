@@ -11,6 +11,11 @@ struct HomeView: View {
     @EnvironmentObject var vm: ScannerViewModel
     var body: some View {
         TabView {
+            SummaryView()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
+            
             ContentView()
                 .tabItem {
                     Label("History", systemImage: "list.bullet.clipboard")
@@ -23,7 +28,7 @@ struct HomeView: View {
                     await vm.requestDataScannerAccessStatus()
                 }// Your barcode scanner view
                 .tabItem {
-                    Label("Scan", systemImage: "barcode.viewfinder")
+                    Label("Log", systemImage: "plus.app.fill")
                 }
             
             BottomButtonView(filter: .settings)

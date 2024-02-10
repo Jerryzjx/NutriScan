@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564402B76E18A002A2BFC /* HealthKitManager.swift */; };
+		C40564432B76E574002A2BFC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564422B76E574002A2BFC /* SummaryView.swift */; };
+		C40564452B76EB2B002A2BFC /* NutritionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564442B76EB2B002A2BFC /* NutritionSettings.swift */; };
+		C40564482B76ECE3002A2BFC /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564472B76ECE3002A2BFC /* RingShape.swift */; };
+		C405644A2B76EE3E002A2BFC /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564492B76EE3E002A2BFC /* RingView.swift */; };
 		C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41270522B715A01003C6DDF /* ScannedItemView.swift */; };
 		C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417367F2B71B5DC0025CC03 /* HomeView.swift */; };
 		C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736812B71B5F20025CC03 /* WelcomeView.swift */; };
 		C41736862B71CC620025CC03 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736852B71CC620025CC03 /* BottomButtonView.swift */; };
-		C41736882B71CC740025CC03 /* BottomTabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736872B71CC740025CC03 /* BottomTabMenu.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -59,12 +63,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C405643F2B76E0AF002A2BFC /* NutriScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NutriScan.entitlements; sourceTree = "<group>"; };
+		C40564402B76E18A002A2BFC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		C40564422B76E574002A2BFC /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		C40564442B76EB2B002A2BFC /* NutritionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettings.swift; sourceTree = "<group>"; };
+		C40564472B76ECE3002A2BFC /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
+		C40564492B76EE3E002A2BFC /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		C41270522B715A01003C6DDF /* ScannedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedItemView.swift; sourceTree = "<group>"; };
 		C417367E2B71B5C80025CC03 /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeistVariableVF.ttf; sourceTree = "<group>"; };
 		C417367F2B71B5DC0025CC03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C41736812B71B5F20025CC03 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		C41736852B71CC620025CC03 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
-		C41736872B71CC740025CC03 /* BottomTabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabMenu.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40564462B76ECB3002A2BFC /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				C40564472B76ECE3002A2BFC /* RingShape.swift */,
+				C40564492B76EE3E002A2BFC /* RingView.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
 		C41736792B71B56A0025CC03 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C47A29612B70838C002AD677 /* APIManager.swift */,
+				C40564402B76E18A002A2BFC /* HealthKitManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -163,6 +182,7 @@
 		C45ADA222B69E277001C34F9 /* NutriScan */ = {
 			isa = PBXGroup;
 			children = (
+				C405643F2B76E0AF002A2BFC /* NutriScan.entitlements */,
 				C417367D2B71B5BC0025CC03 /* Assets */,
 				C417367C2B71B58E0025CC03 /* Utilities */,
 				C41736792B71B56A0025CC03 /* ViewModel */,
@@ -170,7 +190,6 @@
 				C4D58E232B6EEDB900E12C8B /* View */,
 				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
-				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
 				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
 			);
@@ -207,6 +226,7 @@
 			children = (
 				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C47A29682B708B97002AD677 /* NutritionModel.swift */,
+				C40564442B76EB2B002A2BFC /* NutritionSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,13 +234,15 @@
 		C4D58E232B6EEDB900E12C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C40564462B76ECB3002A2BFC /* UI Components */,
 				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
 				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
 				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
 				C417367F2B71B5DC0025CC03 /* HomeView.swift */,
 				C41736812B71B5F20025CC03 /* WelcomeView.swift */,
 				C41736852B71CC620025CC03 /* BottomButtonView.swift */,
-				C41736872B71CC740025CC03 /* BottomTabMenu.swift */,
+				C40564422B76E574002A2BFC /* SummaryView.swift */,
+				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -369,18 +391,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */,
-				C41736882B71CC740025CC03 /* BottomTabMenu.swift in Sources */,
+				C40564432B76E574002A2BFC /* SummaryView.swift in Sources */,
 				C47A29622B70838C002AD677 /* APIManager.swift in Sources */,
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
 				C4BC54812B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
 				C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
+				C405644A2B76EE3E002A2BFC /* RingView.swift in Sources */,
 				C41736862B71CC620025CC03 /* BottomButtonView.swift in Sources */,
 				C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */,
 				C45ADA282B69E277001C34F9 /* Item.swift in Sources */,
 				C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */,
 				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
+				C40564482B76ECE3002A2BFC /* RingShape.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
+				C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
+				C40564452B76EB2B002A2BFC /* NutritionSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NutriScan/NutriScan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
@@ -556,6 +583,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "NutriScan Uses Health Data for tracking nutrients";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -579,6 +607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NutriScan/NutriScan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
@@ -588,6 +617,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "NutriScan Uses Health Data for tracking nutrients";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
