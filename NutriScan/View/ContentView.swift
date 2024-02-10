@@ -49,16 +49,17 @@ struct ContentView: View {
                         WaveShapeMain()
                             .fill(Color("EmeraldL"))
                             .opacity(0.4)
-                            .frame(height: 170)
+                            .frame(height: 180)
                             .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
                         
                         WaveShapeMain()
                             .fill(Color("EmeraldL"))
                             .opacity(0.75)
-                            .frame(height: 170)
+                            .frame(height: 180)
                             .offset(x: 0, y: -20.0)
                             .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
                     }
+                    
                     List {
                         ForEach(items) { item in
                             NavigationLink {
