@@ -16,6 +16,9 @@
 		C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417367F2B71B5DC0025CC03 /* HomeView.swift */; };
 		C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736812B71B5F20025CC03 /* WelcomeView.swift */; };
 		C41736862B71CC620025CC03 /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41736852B71CC620025CC03 /* BottomButtonView.swift */; };
+		C41D65742B77F9F10029A6AE /* LogFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65732B77F9F10029A6AE /* LogFoodView.swift */; };
+		C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65752B77FF460029A6AE /* DetailChartView.swift */; };
+		C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65772B78055A0029A6AE /* NutrientCalculator.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -74,6 +77,9 @@
 		C417367F2B71B5DC0025CC03 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C41736812B71B5F20025CC03 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		C41736852B71CC620025CC03 /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		C41D65732B77F9F10029A6AE /* LogFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFoodView.swift; sourceTree = "<group>"; };
+		C41D65752B77FF460029A6AE /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
+		C41D65772B78055A0029A6AE /* NutrientCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientCalculator.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			children = (
 				C40564472B76ECE3002A2BFC /* RingShape.swift */,
 				C40564492B76EE3E002A2BFC /* RingView.swift */,
+				C41D65772B78055A0029A6AE /* NutrientCalculator.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -243,6 +250,8 @@
 				C41736852B71CC620025CC03 /* BottomButtonView.swift */,
 				C40564422B76E574002A2BFC /* SummaryView.swift */,
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
+				C41D65732B77F9F10029A6AE /* LogFoodView.swift */,
+				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,11 +410,14 @@
 				C41736802B71B5DC0025CC03 /* HomeView.swift in Sources */,
 				C45ADA282B69E277001C34F9 /* Item.swift in Sources */,
 				C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */,
+				C41D65742B77F9F10029A6AE /* LogFoodView.swift in Sources */,
 				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
 				C40564482B76ECE3002A2BFC /* RingShape.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
+				C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */,
 				C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
+				C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */,
 				C40564452B76EB2B002A2BFC /* NutritionSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
