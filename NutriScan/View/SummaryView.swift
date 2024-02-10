@@ -80,95 +80,25 @@ struct SummaryView: View {
                      //   .ignoresSafeArea()
                         Spacer()
                         Spacer()
-                        ScrollView{
-                        VStack (alignment: .leading, spacing: 2){
-                            
-                            HStack {
-                                Image(systemName: "carrot.fill")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color("EmeraldL"))
-                                Text("Calories")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.primary)
+                        ScrollView {
+                            NavigationLink(destination: DetailChartView(nutritionType: "Calories", nutriToday: todaysNutrition.calories, nutriUnit: "Cal")) {
+                                nutriDisplayView(name: "Calories", unit: "Cal", nutriToday: todaysNutrition.calories, nutriConst: NutritionConstants.calories, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
                             }
-                            HStack {
-                                Spacer()
-                                Spacer()
-                                VStack(spacing: 3){
-                                    
-                                    Text("\(todaysNutrition.calories, specifier: "%.0f") Cal")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.primary)
-                                    
-                                    Text("Cal intake")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.primary)
-                                    
-                                    Rectangle() // This acts as the horizontal line
-                                        .frame(height: 1) // Set the height to 1 to make it a thin line
-                                        .foregroundColor(Color(uiColor: .systemGray3)) // Set the color of the line
-                                        .padding(.horizontal, 10) // Optional: add some horizontal padding
-                                    
-                                    Text("\(NutritionConstants.calories, specifier: "%.0f") Cal")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.primary)
-                                    
-                                    Text("Goal")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.primary)
-                                    
-                                    Rectangle() // This acts as the horizontal line
-                                        .frame(height: 1) // Set the height to 1 to make it a thin line
-                                        .foregroundColor(Color(uiColor: .systemGray3)) // Set the color of the line
-                                        .padding(.horizontal, 10) // Optional: add some horizontal padding
-                                    
-                                    Text("271")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.primary)
-                                    
-                                    Text("Active Cal")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.primary)
-                                    
-                                }
-                                Spacer()
-                                nutriRingView(ringWidth: 18.7, pct: (todaysNutrition.calories/NutritionConstants.calories) * 100.00, dimension: 120, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
-                                Spacer()
-                                Spacer()
-                            }
-                        }
-                        .frame(maxWidth: screenSize.width * 0.85)
-                        .padding(7)
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(.ultraThinMaterial)
-                            
-                        )
-                        
-                        Spacer()
-                        
-                            nutriDisplayView(name: "Protein", nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
-                        
-                        Spacer()
-                            
-                            nutriDisplayView(name: "Carbs", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
-                        
-                        Spacer()
-                            
-                            nutriDisplayView(name: "Fat", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
-                        
-                        Spacer()
                             Spacer()
-                    }
-                    
+                            NavigationLink(destination: DetailChartView(nutritionType: "Protein", nutriToday: todaysNutrition.protein, nutriUnit: "g")) {
+                                nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
+                            }
+                            Spacer()
+                            NavigationLink(destination: DetailChartView(nutritionType: "Carbs", nutriToday: todaysNutrition.carbs, nutriUnit: "g")) {
+                                nutriDisplayView(name: "Carbs",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
+                            }
+                            Spacer()
+                            NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g")) {
+                                nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SunsetR"), fgColors: [Color("SunsetL"), Color("SunsetR")])
+                            }
+                            Spacer()
+                            Spacer()
+                        }
                 }
                 
                 
@@ -183,62 +113,62 @@ struct SummaryView: View {
         return HStack (alignment: .center){
             RingView(ringWidth: ringWidth, percent: pct, backgroundColor: bgColor.opacity(0.33), foregroundColors: fgColors)
                 .frame(width: dimension, height: dimension)
-                .padding()
+                
         }
         
     }
     
-    private func nutriDisplayView(name: String, nutriToday: Double, nutriConst: Double, bgColor: Color, fgColors: [Color]) -> some View {
-        return VStack (alignment: .leading, spacing: 2){
-            HStack {
-                Image(systemName: "carrot.fill")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(bgColor)
-                Text(name)
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-            } .foregroundColor(.primary)
+    private func nutriDisplayView(name: String, unit: String, nutriToday: Double, nutriConst: Double, bgColor: Color, fgColors: [Color]) -> some View {
+        
+        return HStack ( spacing: 2){
             
-            HStack {
-                Spacer()
-                Spacer()
-                VStack(spacing: 3){
-                    
-                    Text("\(nutriToday, specifier: "%.0f") g")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Text("\(name) intake")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(Color(uiColor: .systemGray3))
-                    
-                    Text("\(nutriConst, specifier: "%.0f") g")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
-                    Text("Goal")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    
+            VStack(alignment: .leading, spacing: 3) {
+                
+                VStack (alignment: .leading){
+                    HStack {
+                        Image(systemName: "carrot.fill")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(bgColor)
+                        Text(name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(bgColor)
+                    }
                 }
                 Spacer()
-                nutriRingView(ringWidth: 18.7, pct: (nutriToday/nutriConst) * 100.00, dimension: 120, bgColor: bgColor, fgColors: fgColors)
-                Spacer()
-                Spacer()
+                
+                HStack (alignment: .firstTextBaseline ,spacing: 2){
+                    Text("\(nutriToday, specifier: "%.0f") / \(nutriConst, specifier: "%.0f")")
+                        .font(.system(.title, design: .rounded))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                    
+                    Text(unit)
+                        .font(.subheadline)
+                        .foregroundColor(Color(uiColor: .systemGray))
+                        .fontWeight(.bold)
+                    
+                }
+                
             }
+                Spacer()
+            VStack(alignment: .trailing, spacing: 0) {
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.headline)
+                            .foregroundColor(Color(uiColor: .systemGray3))
+                            .alignmentGuide(.top) { d in d[.trailing] }
+                        
+                        Spacer()
+                        
+                        // Ring view
+                nutriRingView(ringWidth: 14.4, pct: (nutriToday / nutriConst) * 100.00, dimension: 90, bgColor: bgColor, fgColors: fgColors)
+                    }
+                
         }
         .frame(maxWidth: screenSize.width * 0.85)
-        .padding(7)
+        .padding(10)
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(.ultraThinMaterial)
