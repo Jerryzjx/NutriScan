@@ -77,11 +77,11 @@ struct SummaryView: View {
                                 .offset(x: 0, y: -20.0)
                                 .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
                         }
-                        .ignoresSafeArea()
+                     //   .ignoresSafeArea()
                         Spacer()
                         Spacer()
                         ScrollView{
-                        VStack (alignment: .leading){
+                        VStack (alignment: .leading, spacing: 2){
                             
                             HStack {
                                 Image(systemName: "carrot.fill")
@@ -96,9 +96,9 @@ struct SummaryView: View {
                             HStack {
                                 Spacer()
                                 Spacer()
-                                VStack(spacing: 5){
+                                VStack(spacing: 3){
                                     
-                                    Text("\(todaysNutrition.calories, specifier: "%.0f")")
+                                    Text("\(todaysNutrition.calories, specifier: "%.0f") Cal")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                         .foregroundColor(.primary)
@@ -113,7 +113,7 @@ struct SummaryView: View {
                                         .foregroundColor(Color(uiColor: .systemGray3)) // Set the color of the line
                                         .padding(.horizontal, 10) // Optional: add some horizontal padding
                                     
-                                    Text("\(NutritionConstants.calories, specifier: "%.0f")")
+                                    Text("\(NutritionConstants.calories, specifier: "%.0f") Cal")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                         .foregroundColor(.primary)
@@ -140,13 +140,13 @@ struct SummaryView: View {
                                     
                                 }
                                 Spacer()
-                                nutriRingView(ringWidth: 23, pct: (todaysNutrition.calories/NutritionConstants.calories) * 100.00, dimension: 140, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
+                                nutriRingView(ringWidth: 18.7, pct: (todaysNutrition.calories/NutritionConstants.calories) * 100.00, dimension: 120, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
                                 Spacer()
                                 Spacer()
                             }
                         }
                         .frame(maxWidth: screenSize.width * 0.85)
-                        .padding(10)
+                        .padding(7)
                         .background(
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(.ultraThinMaterial)
@@ -155,9 +155,18 @@ struct SummaryView: View {
                         
                         Spacer()
                         
-                            nutriDisplayView(name: "Protein", nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color(""), fgColors: <#T##[Color]#>)
+                            nutriDisplayView(name: "Protein", nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
                         
                         Spacer()
+                            
+                            nutriDisplayView(name: "Carbs", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
+                        
+                        Spacer()
+                            
+                            nutriDisplayView(name: "Fat", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
+                        
+                        Spacer()
+                            Spacer()
                     }
                     
                 }
@@ -180,7 +189,7 @@ struct SummaryView: View {
     }
     
     private func nutriDisplayView(name: String, nutriToday: Double, nutriConst: Double, bgColor: Color, fgColors: [Color]) -> some View {
-        return VStack (alignment: .leading){
+        return VStack (alignment: .leading, spacing: 2){
             HStack {
                 Image(systemName: "carrot.fill")
                     .font(.headline)
@@ -195,9 +204,9 @@ struct SummaryView: View {
             HStack {
                 Spacer()
                 Spacer()
-                VStack(spacing: 5){
+                VStack(spacing: 3){
                     
-                    Text("\(nutriToday, specifier: "%.0f")")
+                    Text("\(nutriToday, specifier: "%.0f") g")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
@@ -211,7 +220,7 @@ struct SummaryView: View {
                         .frame(height: 1)
                         .foregroundColor(Color(uiColor: .systemGray3))
                     
-                    Text("\(nutriConst, specifier: "%.0f")")
+                    Text("\(nutriConst, specifier: "%.0f") g")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
@@ -223,12 +232,13 @@ struct SummaryView: View {
                     
                 }
                 Spacer()
-                nutriRingView(ringWidth: 23, pct: (nutriToday/nutriConst) * 100.00, dimension: 140, bgColor: bgColor, fgColors: fgColors)
+                nutriRingView(ringWidth: 18.7, pct: (nutriToday/nutriConst) * 100.00, dimension: 120, bgColor: bgColor, fgColors: fgColors)
                 Spacer()
                 Spacer()
             }
         }
-        .padding(20)
+        .frame(maxWidth: screenSize.width * 0.85)
+        .padding(7)
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(.ultraThinMaterial)
