@@ -18,15 +18,15 @@ class Item {
     let servingWeightGrams: Double?
     let nfMetricQty: Double?
     let nfMetricUom: String?
-    let nfCalories: Double?
-    let nfTotalFat: Double?
+    let nfCalories: Double? = 0
+    let nfTotalFat: Double? = 0
     let nfSaturatedFat: Double?
     let nfCholesterol: Double?
     let nfSodium: Double?
-    let nfTotalCarbohydrate: Double?
+    let nfTotalCarbohydrate: Double? = 0
     let nfDietaryFiber: Double?
     let nfSugars: Double?
-    let nfProtein: Double?
+    let nfProtein: Double? = 0
     let nfPotassium: Double?
     let nfP: Double?
 

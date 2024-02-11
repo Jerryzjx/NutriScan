@@ -10,6 +10,7 @@ import VisionKit
 
 struct BarCodeScannerView: View {
     @EnvironmentObject var vm: ScannerViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
@@ -23,20 +24,20 @@ struct BarCodeScannerView: View {
                             recognizedData: $vm.recognizedData,
                             viewModel: _vm
                         ).id(vm.needsRefresh ? UUID().uuidString : "staticId")
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { // Adjust delay as needed
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { // Adjust delay as needed
                                     vm.isScanningEnabled = true
-                                vm.refreshScannerView()
+                                    vm.refreshScannerView()
                                 }
                             }
-                        .onDisappear {
-                            DispatchQueue.main.async {
+                            .onDisappear {
+                                DispatchQueue.main.async {
                                     vm.isScanningEnabled = false
-                                vm.refreshScannerView()
+                                    vm.refreshScannerView()
                                 }
                             }
-                        .background(Color.gray.opacity(0.3))
-                        .ignoresSafeArea(edges: .top)
+                            .background(Color.gray.opacity(0.3))
+                            .ignoresSafeArea(edges: .top)
                     case .cameraNotAvaliable:
                         Text("Your device does not have a camera")
                     case .scannerNotAvaliable:
@@ -52,6 +53,11 @@ struct BarCodeScannerView: View {
                         .ignoresSafeArea(edges: .top)
                 }
             }
+            .onChange(of: vm.isScannerActive, initial: false) {
+                            if !vm.isScannerActive {
+                                dismiss()
+                            }
+                        }
             .sheet(isPresented: $vm.showScannedItemView) {
                 ScannedItemView(vm: vm)
             }

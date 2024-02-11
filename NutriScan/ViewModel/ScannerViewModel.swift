@@ -35,6 +35,7 @@ final class ScannerViewModel: ObservableObject {
     @Published var showScannedItemView: Bool = false
     @Published var isScanningEnabled: Bool = false
     @Published var needsRefresh: Bool = false
+    @Published var isScannerActive: Bool = false
 
     func refreshScannerView() {
         needsRefresh.toggle()
@@ -104,5 +105,9 @@ final class ScannerViewModel: ObservableObject {
                 }
             }
         }
+    func clearDataForNewScan() {
+        recognizedData.removeAll()
+        itemDetails.removeAll()
+    }
     
 }
