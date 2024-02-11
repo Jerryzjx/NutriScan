@@ -10,6 +10,7 @@ import SwiftUI
 struct ScannedItemView: View {
     @ObservedObject var vm: ScannerViewModel
     @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -269,12 +270,16 @@ struct ScannedItemView: View {
             let newItem = Item(foodItem: foodItem)
             modelContext.insert(newItem)
             vm.showScannedItemView = false
+            vm.clearDataForNewScan()
+            vm.isScannerActive = false
+            dismiss()
         }
     }
     
     private func discardScan() {
         // Implement discard logic here if needed, like clearing temporary data
         vm.showScannedItemView = false
+        vm.clearDataForNewScan()
         vm.refreshScannerView()
     }
 }

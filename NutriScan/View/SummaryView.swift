@@ -90,8 +90,8 @@ struct SummaryView: View {
                                 nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
                             }
                             Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Carbs", nutriToday: todaysNutrition.carbs, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Carbs",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
+                            NavigationLink(destination: DetailChartView(nutritionType: "Carbohydrate", nutriToday: todaysNutrition.carbs, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
+                                nutriDisplayView(name: "Carbohydrate",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
                             }
                             Spacer()
                             NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
