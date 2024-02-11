@@ -20,6 +20,7 @@
 		C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65752B77FF460029A6AE /* DetailChartView.swift */; };
 		C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65772B78055A0029A6AE /* NutrientCalculator.swift */; };
 		C41D657A2B7820700029A6AE /* ManualLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65792B7820700029A6AE /* ManualLogView.swift */; };
+		C45112B72B785F2A005B1F5B /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45112B62B785F2A005B1F5B /* BrowseView.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
 		C45ADA282B69E277001C34F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA272B69E277001C34F9 /* Item.swift */; };
@@ -80,6 +81,7 @@
 		C41D65752B77FF460029A6AE /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
 		C41D65772B78055A0029A6AE /* NutrientCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientCalculator.swift; sourceTree = "<group>"; };
 		C41D65792B7820700029A6AE /* ManualLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLogView.swift; sourceTree = "<group>"; };
+		C45112B62B785F2A005B1F5B /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
 		C45ADA252B69E277001C34F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				C41D65732B77F9F10029A6AE /* LogFoodView.swift */,
 				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
 				C41D65792B7820700029A6AE /* ManualLogView.swift */,
+				C45112B62B785F2A005B1F5B /* BrowseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				C41D657A2B7820700029A6AE /* ManualLogView.swift in Sources */,
 				C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */,
 				C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */,
+				C45112B72B785F2A005B1F5B /* BrowseView.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 				C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */,
 				C40564452B76EB2B002A2BFC /* NutritionSettings.swift in Sources */,
@@ -595,7 +599,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "NutriScan Uses Health Data for tracking nutrients";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Nutriscan uses health data to track nutrients";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Nutriscan uses health data to track nutrients";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "NutriScan Uses Health Data for tracking nutrients";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -629,7 +635,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NutriScan/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan barcodes";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "NutriScan Uses Health Data for tracking nutrients";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Nutriscan uses health data to track nutrients";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Nutriscan uses health data to track nutrients";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "NutriScan Uses Health Data for tracking nutrients";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
