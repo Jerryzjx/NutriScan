@@ -44,6 +44,7 @@ struct SummaryView: View {
     
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
+    @State private var selectedHour: Date? = nil
     
     // This property aggregates today's nutritional data
     private var todaysNutrition: (calories: Double, fat: Double, carbs: Double, protein: Double) {
@@ -80,25 +81,25 @@ struct SummaryView: View {
                      //   .ignoresSafeArea()
                         Spacer()
                         Spacer()
-                        ScrollView {
-                            NavigationLink(destination: DetailChartView(nutritionType: "Calories", nutriToday: todaysNutrition.calories, nutriUnit: "Cal")) {
+                        
+                            NavigationLink(destination: DetailChartView(nutritionType: "Calories", nutriToday: todaysNutrition.calories, nutriUnit: "Cal", rawSelectedHour: $selectedHour)) {
                                 nutriDisplayView(name: "Calories", unit: "Cal", nutriToday: todaysNutrition.calories, nutriConst: NutritionConstants.calories, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
                             }
                             Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Protein", nutriToday: todaysNutrition.protein, nutriUnit: "g")) {
+                            NavigationLink(destination: DetailChartView(nutritionType: "Protein", nutriToday: todaysNutrition.protein, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
                                 nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
                             }
                             Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Carbs", nutriToday: todaysNutrition.carbs, nutriUnit: "g")) {
-                                nutriDisplayView(name: "Carbs",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletL"), fgColors: [Color("VioletL"), Color("VioletR")])
+                            NavigationLink(destination: DetailChartView(nutritionType: "Carbs", nutriToday: todaysNutrition.carbs, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
+                                nutriDisplayView(name: "Carbs",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
                             }
                             Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g")) {
+                            NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
                                 nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SunsetL"), fgColors: [Color("SunsetL"), Color("SunsetR")])
                             }
                             Spacer()
                             Spacer()
-                        }
+                        
                 }
                 
                 

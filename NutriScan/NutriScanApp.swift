@@ -12,6 +12,7 @@ import SwiftData
 struct NutriScanApp: App {
     
     @StateObject private var vm = ScannerViewModel()
+    @AppStorage("hasLaunchedBefore") var hasLaunchedBefore: Bool = false
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -28,16 +29,18 @@ struct NutriScanApp: App {
 
     var body: some Scene {
         WindowGroup {
-            /*
-            BarCodeScannerView()
-                .environmentObject(vm)
-                .task {
-                    await vm.requestDataScannerAccessStatus()
+                    if hasLaunchedBefore {
+                        HomeView() // Replace with your actual HomeView
+                            .environmentObject(vm)
+                    } else {
+                        WelcomeView()
+                            .environmentObject(vm)
+                            .onAppear {
+                                // Set the flag to true so next time the app launches, it goes directly to HomeView
+                                hasLaunchedBefore = true
+                            }
+                    }
                 }
-             */
-            WelcomeView()
-                .environmentObject(vm)
-        }
-        .modelContainer(sharedModelContainer)
-    }
+                .modelContainer(sharedModelContainer)
+            }
 }

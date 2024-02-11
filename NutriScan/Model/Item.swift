@@ -55,4 +55,8 @@ class Item {
     convenience init(foodItem: FoodItem) {
         self.init(timestamp: Date(), foodName: foodItem.foodName, brandName: foodItem.brandName, servingQty: foodItem.servingQty, servingUnit: foodItem.servingUnit, servingWeightGrams: foodItem.servingWeightGrams, nfMetricQty: foodItem.nfMetricQty, nfMetricUom: foodItem.nfMetricUom, nfCalories: foodItem.nfCalories, nfTotalFat: foodItem.nfTotalFat, nfSaturatedFat: foodItem.nfSaturatedFat, nfCholesterol: foodItem.nfCholesterol, nfSodium: foodItem.nfSodium, nfTotalCarbohydrate: foodItem.nfTotalCarbohydrate, nfDietaryFiber: foodItem.nfDietaryFiber, nfSugars: foodItem.nfSugars, nfProtein: foodItem.nfProtein, nfPotassium: foodItem.nfPotassium, nfP: foodItem.nfP)
     }
+    
+    convenience init(from item: Item) {
+        self.init(timestamp: Date(), foodName: item.foodName, brandName: item.brandName, servingQty: item.servingQty, servingUnit: item.servingUnit, servingWeightGrams: item.servingWeightGrams, nfMetricQty: item.nfMetricQty, nfMetricUom: item.nfMetricUom, nfCalories: item.nfCalories, nfTotalFat: item.nfTotalFat, nfSaturatedFat: item.nfSaturatedFat, nfCholesterol: item.nfCholesterol, nfSodium: item.nfSodium, nfTotalCarbohydrate: item.nfTotalCarbohydrate, nfDietaryFiber: item.nfDietaryFiber, nfSugars: item.nfSugars, nfProtein: item.nfProtein, nfPotassium: item.nfPotassium, nfP: item.nfP)
+    }
 }

@@ -13,17 +13,17 @@ struct HomeView: View {
         TabView {
             SummaryView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
-            
-            ContentView()
-                .tabItem {
-                    Label("History", systemImage: "list.bullet.clipboard")
+                    Label("Summary", systemImage: "leaf.fill")
                 }
             
             LogFoodView()
                 .tabItem {
                     Label("Log", systemImage: "plus.app.fill")
+                }
+            
+            BrowseView()
+                .tabItem {
+                    Label("Browse", systemImage: "chart.bar.fill")
                 }
             
             BottomButtonView(filter: .settings)

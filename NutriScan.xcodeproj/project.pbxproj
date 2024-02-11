@@ -20,6 +20,7 @@
 		C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65752B77FF460029A6AE /* DetailChartView.swift */; };
 		C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65772B78055A0029A6AE /* NutrientCalculator.swift */; };
 		C41D657A2B7820700029A6AE /* ManualLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D65792B7820700029A6AE /* ManualLogView.swift */; };
+		C42C7DFD2B78858B005403A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C7DFC2B78858B005403A1 /* SettingsView.swift */; };
 		C45112B72B785F2A005B1F5B /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45112B62B785F2A005B1F5B /* BrowseView.swift */; };
 		C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA232B69E277001C34F9 /* NutriScanApp.swift */; };
 		C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45ADA252B69E277001C34F9 /* ContentView.swift */; };
@@ -81,6 +82,7 @@
 		C41D65752B77FF460029A6AE /* DetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChartView.swift; sourceTree = "<group>"; };
 		C41D65772B78055A0029A6AE /* NutrientCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientCalculator.swift; sourceTree = "<group>"; };
 		C41D65792B7820700029A6AE /* ManualLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLogView.swift; sourceTree = "<group>"; };
+		C42C7DFC2B78858B005403A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C45112B62B785F2A005B1F5B /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		C45ADA202B69E277001C34F9 /* NutriScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45ADA232B69E277001C34F9 /* NutriScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanApp.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				C40564492B76EE3E002A2BFC /* RingView.swift */,
 				C41D65772B78055A0029A6AE /* NutrientCalculator.swift */,
 				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
+				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -253,9 +256,9 @@
 				C40564422B76E574002A2BFC /* SummaryView.swift */,
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C41D65732B77F9F10029A6AE /* LogFoodView.swift */,
-				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
 				C41D65792B7820700029A6AE /* ManualLogView.swift */,
 				C45112B62B785F2A005B1F5B /* BrowseView.swift */,
+				C42C7DFC2B78858B005403A1 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */,
+				C42C7DFD2B78858B005403A1 /* SettingsView.swift in Sources */,
 				C40564432B76E574002A2BFC /* SummaryView.swift in Sources */,
 				C47A29622B70838C002AD677 /* APIManager.swift in Sources */,
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
@@ -591,7 +595,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NutriScan/NutriScan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
@@ -627,7 +631,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NutriScan/NutriScan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
@@ -662,7 +666,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -682,7 +686,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -701,7 +705,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -719,7 +723,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;

@@ -100,7 +100,8 @@ struct DataScannerView: UIViewControllerRepresentable {
         }
         
         func dataScanner(_ dataScanner: DataScannerViewController, didRemove removedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-            
+            // clear the recognizedData array
+            recognizedData.removeAll()
             print("didRemove: \(removedItems)")
         }
         

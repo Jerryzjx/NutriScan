@@ -133,25 +133,31 @@ struct ScannedItemView: View {
                         .fontWeight(.semibold)
                     
                     if let nfTotalFat = foodItem.nfTotalFat {
-                        DetailView(label: "Total Fat", value: "\(nfTotalFat) g")
+                        let percentDailyValueFat = (nfTotalFat / 75.0) * 100 // Assuming adult daily value
+                            DetailView(label: "Total Fat", value: "\(nfTotalFat) g", dailyValue: percentDailyValueFat)
                     }
                     if let nfSaturatedFat = foodItem.nfSaturatedFat {
-                        DetailView(label: "Saturated Fat", value: "\(nfSaturatedFat) g")
+                        let percentDailyValueSF = (nfSaturatedFat / 20.0) * 100
+                        DetailView(label: "Saturated Fat", value: "\(nfSaturatedFat) g", dailyValue: percentDailyValueSF)
                     }
                     if let nfCholesterol = foodItem.nfCholesterol {
-                        DetailView(label: "Cholesterol", value: "\(nfCholesterol) mg")
+                        let percentDailyValueSF = (nfCholesterol / 300.00) * 100
+                        DetailView(label: "Cholesterol", value: "\(nfCholesterol) mg", dailyValue: percentDailyValueSF)
                     }
                     if let nfSodium = foodItem.nfSodium {
-                        DetailView(label: "Sodium", value: "\(nfSodium) mg")
+                        let percentDailyValueSodium = (nfSodium / 2300.00) * 100
+                        DetailView(label: "Sodium", value: "\(nfSodium) mg", dailyValue: percentDailyValueSodium)
                     }
                     if let nfTotalCarbohydrate = foodItem.nfTotalCarbohydrate {
                         DetailView(label: "Total Carbohydrate", value: "\(nfTotalCarbohydrate) g")
                     }
                     if let nfDietaryFiber = foodItem.nfDietaryFiber {
-                        DetailView(label: "Dietary Fiber", value: "\(nfDietaryFiber) g")
+                        let percentDailyValueDietaryFiber = (nfDietaryFiber / 28.00) * 100
+                        DetailView(label: "Dietary Fiber", value: "\(nfDietaryFiber) g", dailyValue: percentDailyValueDietaryFiber)
                     }
                     if let nfSugars = foodItem.nfSugars {
-                        DetailView(label: "Sugars", value: "\(nfSugars) g")
+                        let percentDailyValueSugar = (nfSugars / 100.00) * 100
+                        DetailView(label: "Sugars", value: "\(nfSugars) g", dailyValue: percentDailyValueSugar)
                     }
                     if let nfProtein = foodItem.nfProtein {
                         DetailView(label: "Protein", value: "\(nfProtein) g")
@@ -176,7 +182,7 @@ struct ScannedItemView: View {
         return VStack(spacing: 10) {
             Text(label)
                 .font(.subheadline)
-                .foregroundColor(Color(.systemGray2))
+                .foregroundColor(Color(.systemGray))
                 .fontWeight(.semibold)
             
             Text(value)
@@ -190,7 +196,7 @@ struct ScannedItemView: View {
                 .fill(Color(.systemBackground)))
         .overlay( // Apply a rounded border
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(.systemGray4), lineWidth: 1)
+                .stroke(Color(.systemGray), lineWidth: 1)
                 .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 2)
         )
     }
@@ -217,7 +223,7 @@ struct ScannedItemView: View {
         VStack(spacing: 10) {
             Text(label)
                 .font(.subheadline)
-                .foregroundColor(Color(.systemGray2))
+                .foregroundColor(Color(.systemGray))
                 .fontWeight(.semibold)
             
             Text(value)
@@ -230,20 +236,31 @@ struct ScannedItemView: View {
                 .fill(Color(.systemBackground)))
         .overlay( // Apply a rounded border
             RoundedRectangle(cornerRadius: 15)
-                .stroke(Color(.systemGray4), lineWidth: 1)
+                .stroke(Color(.systemGray), lineWidth: 1)
                 .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 2)
         )
     }
     
-    private func DetailView(label: String, value: String) -> some View {
-        HStack {
-            Text("\(label)")
-                
-            Spacer()
+    private func DetailView(label: String, value: String, dailyValue: Double? = nil) -> some View {
+        let width = UIScreen.main.bounds.width
+        return HStack (){
+            Text(label)
+                .frame(width: width * 0.45, alignment: .leading)
+                //.alignmentGuide(.leading) { d in d[.leading] }
             Text(value)
-                .foregroundColor(Color(.systemGray2))
+                .frame(width: width * 0.3, alignment: .leading)
+                .foregroundColor(Color(.systemGray))
+                //.alignmentGuide(.leading) { d in d[.leading] }
+            // Display % Daily Value if applicable
+            if let dailyValue = dailyValue {
+                Text("\(Int(dailyValue))%")
+                    .frame(width: width * 0.2, alignment: .trailing)
+                    .foregroundColor(Color(.systemGray))
+                    //.alignmentGuide(.leading) { d in d[.leading] }
+            }
         }
     }
+
     
     
     private func saveScan(FoodItem foodItem: FoodItem) {
@@ -258,6 +275,7 @@ struct ScannedItemView: View {
     private func discardScan() {
         // Implement discard logic here if needed, like clearing temporary data
         vm.showScannedItemView = false
+        vm.refreshScannerView()
     }
 }
 

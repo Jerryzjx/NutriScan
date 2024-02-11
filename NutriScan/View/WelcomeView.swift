@@ -141,7 +141,7 @@ struct WelcomeView: View {
                     .cornerRadius(25)
                 }
                 .padding(40)
-                .padding(.bottom, 35)
+               // .padding(.bottom, 35)
                 
                 ZStack {
                     BottomWaveShape()
