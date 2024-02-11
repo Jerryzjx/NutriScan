@@ -122,13 +122,18 @@ struct LogFoodView: View {
         HStack {
             Spacer()
             NavigationLink(destination: BarCodeScannerView().environmentObject(vm)) {
-                HStack(spacing: 7) {
+                HStack(spacing: 9) {
                     Image(systemName: "barcode.viewfinder")
                         .font(Font.title.weight(.bold))
                     
-                    Text("Scan")
-                        .font(.headline)
-                        .fontWeight(.bold)
+                    VStack{
+                        Text("Scan")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Text("Barcode")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                    }
                 }
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -137,23 +142,26 @@ struct LogFoodView: View {
                 .cornerRadius(20)
             }
             .task {
+                vm.isScannerActive = true
                 await vm.requestDataScannerAccessStatus()
             }
             .padding()
             .background(Color.clear)
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .frame(width: screenSize.width * 0.475, height: screenSize.width * 0.155)
-            
-            
+            .frame(width: screenSize.width * 0.475, height: screenSize.width * 0.175)
             
             NavigationLink(destination: ManualLogView()) {
-                HStack(spacing: 7) {
-                    Image(systemName: "plus.app.fill")
+                HStack(spacing: 9) {
+                    Image(systemName: "pencil.and.list.clipboard")
                         .font(Font.title.weight(.bold))
-                    
-                    Text("Log")
-                        .font(.headline)
-                        .fontWeight(.bold)
+                    VStack{
+                        Text("Manual")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Text("Entry")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                    }
                 }
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -164,7 +172,7 @@ struct LogFoodView: View {
             .padding()
             .background(Color.clear)
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .frame(width: screenSize.width * 0.475, height: screenSize.width * 0.155)
+            .frame(width: screenSize.width * 0.475, height: screenSize.width * 0.175)
             
             
         }
