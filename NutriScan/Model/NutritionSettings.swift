@@ -13,5 +13,3 @@ struct NutritionConstants {
     static let carbs = 100.0
     static let protein = 50.0
 }
-
-let username = "Leonard"
