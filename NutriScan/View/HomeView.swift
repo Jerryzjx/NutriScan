@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: ScannerViewModel
+    @Default(\.currentTheme) var currentTheme
     var body: some View {
         TabView {
             SummaryView()
@@ -25,15 +26,15 @@ struct HomeView: View {
                 .tabItem {
                     Label("Browse", systemImage: "chart.bar.fill")
                 }
-            
-            BottomButtonView(filter: .settings)
+           
+                SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
             
     
         }
-        .accentColor(Color("EmeraldL"))
+        .accentColor(colorFromString(currentTheme))
         .navigationBarBackButtonHidden(true)
     }
 }

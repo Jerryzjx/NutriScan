@@ -64,6 +64,7 @@ struct WelcomeView: View {
     var topShapeHeight: CGFloat = 175
     var bottomShapeHeight: CGFloat = 100
     @EnvironmentObject var vm: ScannerViewModel
+    @Default(\.currentTheme) var currentTheme
     
     var body: some View {
         NavigationView {
@@ -71,13 +72,13 @@ struct WelcomeView: View {
                 ZStack {
                     
                     WaveShape()
-                        .fill(Color("EmeraldL"))
+                        .fill(colorFromString(currentTheme))
                         .opacity(0.4)
                         .frame(height: topShapeHeight)
                         .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
                     
                     WaveShape()
-                        .fill(Color("EmeraldL"))
+                        .fill(colorFromString(currentTheme))
                         .frame(height: topShapeHeight)
                         .offset(x: 0, y: -20.0)
                         .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
@@ -91,7 +92,7 @@ struct WelcomeView: View {
                         .font(.system(size: 52))
                         .fontWeight(.heavy)
                         .foregroundStyle(
-                            LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing)
+                            gradientFromString(currentTheme)
                         )
                 }
                 .padding(7)
@@ -110,12 +111,12 @@ struct WelcomeView: View {
                         Image(systemName: "leaf")
                             .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(Color("EmeraldR"))
+                            .foregroundColor(colorFromString(currentTheme))
                         Text("Eat Smart.")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundStyle(
-                                LinearGradient(colors: [Color("EmeraldR"), Color("EmeraldL")], startPoint: .leading, endPoint: .trailing)
+                                gradientFromString(currentTheme)
                             )
                     }
                 }

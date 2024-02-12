@@ -37,7 +37,24 @@ struct WaveShapeSummary: Shape {
     
 }
 struct SummaryView: View {
-    
+    @Default(\.caloriesGoalText) var caloriesGoalText
+    @Default(\.carbohydrateGoalText) var carbohydrateGoalText
+    @Default(\.proteinGoalText) var proteinGoalText
+    @Default(\.fatGoalText) var fatGoalText
+    @Default(\.currentTheme) var currentTheme
+    // convert the above string to double
+    var caloriesGoal: Double {
+        return Double(caloriesGoalText) ?? 0
+    }
+    var carbohydrateGoal: Double {
+        return Double(carbohydrateGoalText) ?? 0
+    }
+    var proteinGoal: Double {
+        return Double(proteinGoalText) ?? 0
+    }
+    var fatGoal: Double {
+        return Double(fatGoalText) ?? 0
+    }
     let screenSize: CGRect = UIScreen.main.bounds
     
     @StateObject var healthKitManager = HealthKitManager.shared
@@ -66,13 +83,13 @@ struct SummaryView: View {
                     VStack(alignment: .center){
                         ZStack {
                             WaveShapeSummary()
-                                .fill(Color("EmeraldL"))
+                                .fill(colorFromString(currentTheme))
                                 .opacity(0.4)
                                 .frame(height: 170)
                                 .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
                             
                             WaveShapeSummary()
-                                .fill(Color("EmeraldL"))
+                                .fill(colorFromString(currentTheme))
                                 .opacity(0.75)
                                 .frame(height: 170)
                                 .offset(x: 0, y: -20.0)
@@ -83,19 +100,19 @@ struct SummaryView: View {
                         Spacer()
                         
                             NavigationLink(destination: DetailChartView(nutritionType: "Calories", nutriToday: todaysNutrition.calories, nutriUnit: "Cal", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Calories", unit: "Cal", nutriToday: todaysNutrition.calories, nutriConst: NutritionConstants.calories, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
+                                nutriDisplayView(name: "Calories", unit: "Cal", nutriToday: todaysNutrition.calories, nutriConst: caloriesGoal, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
                             }
                             Spacer()
                             NavigationLink(destination: DetailChartView(nutritionType: "Protein", nutriToday: todaysNutrition.protein, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: NutritionConstants.protein, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
+                                nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: proteinGoal, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
                             }
                             Spacer()
                             NavigationLink(destination: DetailChartView(nutritionType: "Carbohydrate", nutriToday: todaysNutrition.carbs, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Carbohydrate",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: NutritionConstants.carbs, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
+                                nutriDisplayView(name: "Carbohydrate",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: carbohydrateGoal, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
                             }
                             Spacer()
                             NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: NutritionConstants.fat, bgColor: Color("SunsetL"), fgColors: [Color("SunsetL"), Color("SunsetR")])
+                                nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: fatGoal, bgColor: Color("SunsetL"), fgColors: [Color("SunsetL"), Color("SunsetR")])
                             }
                             Spacer()
                             Spacer()
