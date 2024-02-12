@@ -138,8 +138,15 @@ struct SummaryView: View {
     
     private func nutriDisplayView(name: String, unit: String, nutriToday: Double, nutriConst: Double, bgColor: Color, fgColors: [Color]) -> some View {
         
-        let iconName = name == "Calories" ? "flame.fill" : "carrot.fill"
-        
+        var iconName = "carrot.fill"
+        switch name {
+        case "Calories":
+            iconName = "flame.fill"
+        case "Protein":
+            iconName = "fish.fill"
+        default:
+            iconName = "carrot.fill"
+        }
         return HStack ( spacing: 2){
             
             VStack(alignment: .leading, spacing: 3) {

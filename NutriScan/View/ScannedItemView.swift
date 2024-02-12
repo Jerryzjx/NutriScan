@@ -11,6 +11,8 @@ struct ScannedItemView: View {
     @ObservedObject var vm: ScannerViewModel
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
+    @Default(\.currentTheme) var currentTheme
+    let screenSize: CGRect = UIScreen.main.bounds
     
     var body: some View {
         VStack {
@@ -40,7 +42,7 @@ struct ScannedItemView: View {
                     }) {
                         Text("Save")
                             .fontWeight(.semibold)
-                            .foregroundColor(Color("EmeraldL"))
+                            .foregroundColor(colorFromString(currentTheme))
                     }
                 }
                 .padding()
@@ -49,239 +51,240 @@ struct ScannedItemView: View {
     }
     
     private var bottomContainerView: some View {
-        ScrollView {
-            // Check if there is at least one item in itemDetails
+        VStack{
             if let foodItem = vm.itemDetails.first {
-                VStack(alignment: .leading, spacing: 15) {
-                    // Directly use foodItem since we're guaranteed to only have one
-                    VStack (alignment: .center, spacing: 15){
-                        Text(foodItem.foodName)
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        
-                        Text(foodItem.brandName ?? "")
-                            .font(.headline)
-                    }
-                    .frame(maxWidth: .infinity)
+                
+                NavigationStack {
                     
-                    VStack(alignment: .leading, spacing: 15) {
-                        Text("Nutritional Value:")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        
-                        HStack {
-                            // squared display for more important nutritional values
-                            // Fix the width and height of each VStack
-                            Spacer()
-                            // display for Calories
-                            if let nfCalories = foodItem.nfCalories {
-                                    ValueView(label: "Cal", value: "\(Int(nfCalories))")
-                                }
+                    VStack(alignment: .leading, spacing: 10) {
+                        Form{
+                            VStack (alignment: .leading, spacing: 10){
+                                Text(foodItem.foodName)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                
+                                Text(foodItem.brandName ?? "")
+                                    .font(.headline)
+                                    .foregroundColor(.gray)
+                            }
                             
-                            Spacer()
-                            // display for Fat
-                            if let nfTotalFat = foodItem.nfTotalFat {
-                                    ValueView(label: "Fat", value: "\(Int(nfTotalFat))")
+                            Section(header: Text("Serving information")) {
+                                HStack {
+                                    Text("Serving Size:")
+                                        .font(.subheadline) // Smaller text for the label
+                                        .fontWeight(.regular)
+                                        .foregroundColor(.gray)
+                                    
+                                    Spacer()
+                                    Text("\(Int(foodItem.servingQty ?? 1))")
+                                        .font(.headline)
                                 }
-                        
-                            Spacer()
-                            // display for Carbs
-                            if let nfTotalCarbohydrate = foodItem.nfTotalCarbohydrate {
-                                    ValueView(label: "Carbs", value: "\(Int(nfTotalCarbohydrate))")
+                                
+                                HStack {
+                                    Text("Serving Quantity:")
+                                        .font(.subheadline) // Smaller text for the label
+                                        .fontWeight(.regular)
+                                        .foregroundColor(.gray)
+                                    
+                                    Spacer()
+                                    if let nfMetricQty = foodItem.nfMetricQty, let nfMetricUom = foodItem.nfMetricUom {
+                                        Text("\(Int(nfMetricQty)) \(nfMetricUom)")
+                                            .font(.headline)
+                                    }
+                                    
                                 }
+                            }
                             
-                            Spacer()
-                            // display for Protein
-                            if let nfProtein = foodItem.nfProtein {
-                                    ValueView(label: "Protein", value: "\(Int(nfProtein))")
+                            Section(header: Text("Nutritional Value")) {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    // Header Row
+                                    HStack {
+                                        Text("Nutrient")
+                                            .fontWeight(.bold)
+                                            .frame(width: screenSize.width * 0.41, alignment: .leading) // Fixed width for nutrient column
+                                        Text("Value")
+                                            .fontWeight(.bold)
+                                            .frame(width: screenSize.width * 0.22, alignment: .leading) // Fixed width for value column
+                                        Text("%DV")
+                                            .fontWeight(.bold)
+                                            .frame(width: screenSize.width * 0.12, alignment: .trailing) // Fixed width for %DV column
+                                    }
+                                    .padding(.bottom, 5)
+                                    
+                                    Divider()
+                                        .frame(height: 1)
+                                    
+                                    
+                                    if let nfCalories = foodItem.nfCalories {
+                                        nutritionalRow(label: "Calories", value: "\(Int(nfCalories)) kcal", dailyValue: calculateDailyValue(nutrient: .other, value: nfCalories))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfTotalFat = foodItem.nfTotalFat {
+                                        nutritionalRow(label: "Total Fat", value: "\(Int(nfTotalFat)) g", dailyValue: calculateDailyValue(nutrient: .fat, value: nfTotalFat))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    if let nfSaturatedFat = foodItem.nfSaturatedFat {
+                                        nutritionalRow(label: "Saturated Fat", value: String(format: "%.1f g", nfSaturatedFat), dailyValue: calculateDailyValue(nutrient: .saturatedFat, value: nfSaturatedFat))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    if let nfTotalCarbohydrate = foodItem.nfTotalCarbohydrate {
+                                        nutritionalRow(label: "Carbohydrate", value: "\(Int(nfTotalCarbohydrate)) g", dailyValue: calculateDailyValue(nutrient: .other, value: nfTotalCarbohydrate))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfDietaryFiber = foodItem.nfDietaryFiber {
+                                        nutritionalRow(label: "Dietary Fiber", value: "\(Int(nfDietaryFiber)) g", dailyValue: calculateDailyValue(nutrient: .fibre, value: nfDietaryFiber))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfSugars = foodItem.nfSugars {
+                                        nutritionalRow(label: "Sugar", value: "\(Int(nfSugars)) g", dailyValue: calculateDailyValue(nutrient: .sugar, value: nfSugars))
+                                        Divider()
+                                            .frame(height: 1)
+                                        
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfProtein = foodItem.nfProtein {
+                                        nutritionalRow(label: "Protein", value: "\(Int(nfProtein)) g", dailyValue: calculateDailyValue(nutrient: .other, value: nfProtein))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    if let nfCholesterol = foodItem.nfCholesterol {
+                                        nutritionalRow(label: "Cholesterol", value: "\(Int(nfCholesterol)) mg", dailyValue: calculateDailyValue(nutrient: .cholesterol, value: nfCholesterol))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfSodium = foodItem.nfSodium {
+                                        nutritionalRow(label: "Sodium", value: "\(Int(nfSodium)) mg", dailyValue: calculateDailyValue(nutrient: .sodium, value: nfSodium))
+                                        
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfPotassium = foodItem.nfPotassium {
+                                        nutritionalRow(label: "Potassium", value: "\(Int(nfPotassium))", dailyValue: calculateDailyValue(nutrient: .other, value: nfPotassium))
+                                        Divider()
+                                            .frame(height: 1)
+                                    }
+                                    
+                                    
+                                    
+                                    if let nfP = foodItem.nfP {
+                                        nutritionalRow(label: "Phosphorus", value: "\(Int(nfP)) mg", dailyValue: calculateDailyValue(nutrient: .other, value: nfP))
+                                        
+                                    }
                                 }
-                           
-                            Spacer()
+                                .padding()
+                                
+                            }
                         }
-                    }
-                    
-                    Text("Serving Size:")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    
-                    HStack {
-                        // Check and display serving weight in grams
                         
-                       // if let servingWeightGrams = foodItem.servingWeightGrams {
-                         //   SizeView(label: "Serving Size", value: "\(Int(servingWeightGrams)) grams")
-                       // }
-                        Spacer()
-                        Spacer()
-
-                        // Check and display metric quantity and unit
-                        if let nfMetricQty = foodItem.nfMetricQty, let nfMetricUom = foodItem.nfMetricUom {
-                            SizeView(label: "Qty", value: "\(Int(nfMetricQty)) \(nfMetricUom)")
-                        }
-                        Spacer()
-                        //
-                        if let servingQty = foodItem.servingQty, let servingUnit = foodItem.servingUnit {
-                            SizeView(label: "Per", value: "\(Int(servingQty)) \(servingUnit)")
-                        }
-                        Spacer()
-                        Spacer()
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    
-                    
-                    Text("Nutrition Facts")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    
-                    if let nfTotalFat = foodItem.nfTotalFat {
-                        let percentDailyValueFat = (nfTotalFat / 75.0) * 100 // Assuming adult daily value
-                            DetailView(label: "Total Fat", value: "\(nfTotalFat) g", dailyValue: percentDailyValueFat)
-                    }
-                    if let nfSaturatedFat = foodItem.nfSaturatedFat {
-                        let percentDailyValueSF = (nfSaturatedFat / 20.0) * 100
-                        DetailView(label: "Saturated Fat", value: "\(nfSaturatedFat) g", dailyValue: percentDailyValueSF)
-                    }
-                    if let nfCholesterol = foodItem.nfCholesterol {
-                        let percentDailyValueSF = (nfCholesterol / 300.00) * 100
-                        DetailView(label: "Cholesterol", value: "\(nfCholesterol) mg", dailyValue: percentDailyValueSF)
-                    }
-                    if let nfSodium = foodItem.nfSodium {
-                        let percentDailyValueSodium = (nfSodium / 2300.00) * 100
-                        DetailView(label: "Sodium", value: "\(nfSodium) mg", dailyValue: percentDailyValueSodium)
-                    }
-                    if let nfTotalCarbohydrate = foodItem.nfTotalCarbohydrate {
-                        DetailView(label: "Total Carbohydrate", value: "\(nfTotalCarbohydrate) g")
-                    }
-                    if let nfDietaryFiber = foodItem.nfDietaryFiber {
-                        let percentDailyValueDietaryFiber = (nfDietaryFiber / 28.00) * 100
-                        DetailView(label: "Dietary Fiber", value: "\(nfDietaryFiber) g", dailyValue: percentDailyValueDietaryFiber)
-                    }
-                    if let nfSugars = foodItem.nfSugars {
-                        let percentDailyValueSugar = (nfSugars / 100.00) * 100
-                        DetailView(label: "Sugars", value: "\(nfSugars) g", dailyValue: percentDailyValueSugar)
-                    }
-                    if let nfProtein = foodItem.nfProtein {
-                        DetailView(label: "Protein", value: "\(nfProtein) g")
-                    }
-                    if let nfPotassium = foodItem.nfPotassium {
-                        DetailView(label: "Potassium", value: "\(nfPotassium) mg")
-                    }
-                    if let nfP = foodItem.nfP {
-                        DetailView(label: "Phosphorus", value: "\(nfP) mg")
                     }
                 }
-                .padding(.vertical, 4)
-            }
-        }
-        .padding(10)
-    }
-    
-    private func ValueView(label: String, value: String) -> some View {
-        
-        let color: Color = determineColor(for: label, with: value)
-        
-        return VStack(spacing: 10) {
-            Text(label)
-                .font(.subheadline)
-                .foregroundColor(Color(.systemGray))
-                .fontWeight(.semibold)
-            
-            Text(value)
-                .font(.title3)
-                .fontWeight(.semibold)
-                .foregroundColor(color)
-        }
-        .frame(width: 55, height: 55)
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 20)
-                .fill(Color(.systemBackground)))
-        .overlay( // Apply a rounded border
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(.systemGray), lineWidth: 1)
-                .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 2)
-        )
-    }
-    
-    private func determineColor(for nutrient: String, with value: String) -> Color {
-        let value = Double(value) ?? 0
-        switch nutrient {
-        case "Cal":
-            
-            return Color("LightPurple")
-        case "Fat":
-            return value < 5 ? Color("EmeraldL") : (value <= 11 ? Color("AppOrange") : Color("AppRed"))
-        case "Carbs":
-            return value < 7 ? Color("EmeraldL") : (value <= 15 ? Color("AppOrange") : Color("AppRed"))
-        case "Protein":
-            return Color("LightBlue")
-        default:
-            return .primary
-        }
-    }
-
-    
-    private func SizeView(label: String, value: String) -> some View {
-        VStack(spacing: 10) {
-            Text(label)
-                .font(.subheadline)
-                .foregroundColor(Color(.systemGray))
-                .fontWeight(.semibold)
-            
-            Text(value)
-                .font(.title3)
-                .fontWeight(.semibold)
-        }
-        .frame(width: 108, height: 40)
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 20)
-                .fill(Color(.systemBackground)))
-        .overlay( // Apply a rounded border
-            RoundedRectangle(cornerRadius: 15)
-                .stroke(Color(.systemGray), lineWidth: 1)
-                .shadow(color: Color.gray.opacity(0.5), radius: 2, x: 0, y: 2)
-        )
-    }
-    
-    private func DetailView(label: String, value: String, dailyValue: Double? = nil) -> some View {
-        let width = UIScreen.main.bounds.width
-        return HStack (){
-            Text(label)
-                .frame(width: width * 0.45, alignment: .leading)
-                //.alignmentGuide(.leading) { d in d[.leading] }
-            Text(value)
-                .frame(width: width * 0.3, alignment: .leading)
-                .foregroundColor(Color(.systemGray))
-                //.alignmentGuide(.leading) { d in d[.leading] }
-            // Display % Daily Value if applicable
-            if let dailyValue = dailyValue {
-                Text("\(Int(dailyValue))%")
-                    .frame(width: width * 0.2, alignment: .trailing)
-                    .foregroundColor(Color(.systemGray))
-                    //.alignmentGuide(.leading) { d in d[.leading] }
             }
         }
     }
-
-    
-    
-    private func saveScan(FoodItem foodItem: FoodItem) {
-        // Implement saving logic here, possibly updating the SwiftData model
-        withAnimation {
-            let newItem = Item(foodItem: foodItem)
-            modelContext.insert(newItem)
+        
+        @ViewBuilder
+        func nutritionalRow(label: String, value: String?, dailyValue: Double?) -> some View {
+            HStack {
+                if label == "Calories" || label == "Total Fat" ||  label == "Carbohydrate" ||  label == "Protein"  {
+                    Text(label)
+                        .bold()
+                        .font(.headline)
+                        .frame(width: screenSize.width * 0.41, alignment: .leading)
+                } else {
+                    Text(label)
+                        .font(.subheadline)
+                        .frame(width: screenSize.width * 0.41, alignment: .leading)
+                }
+                
+                if let value = value {
+                    Text(value)
+                        .frame(width: screenSize.width * 0.22, alignment: .leading)
+                        .foregroundColor(.gray)
+                }
+                if let dailyValue = dailyValue {
+                    Text("\(Int(dailyValue))%")
+                        .frame(width: screenSize.width * 0.12, alignment: .trailing)
+                        .foregroundColor(dailyValue >= 15 ? Color("SunsetL") : .gray)
+                }
+                
+            }
+        }
+        
+        func calculateDailyValue(nutrient: Nutrient, value: Double) -> Double? {
+            // Placeholder function to calculate %DV based on nutrient type and value
+            switch nutrient {
+            case .fat:
+                return (value / 75) * 100
+            case .sugar:
+                return (value / 100) * 100
+            case .saturatedFat:
+                return (value / 20) * 100
+            case .fibre:
+                return (value / 28) * 100
+            case .cholesterol:
+                return (value / 300) * 100
+            case .sodium:
+                return (value / 2300) * 100
+            default:
+                return nil
+            }
+        }
+        
+        enum Nutrient {
+            case fat, sugar, protein, sodium, saturatedFat, fibre, cholesterol, other
+        }
+        
+        
+        private func saveScan(FoodItem foodItem: FoodItem) {
+            // Implement saving logic here, possibly updating the SwiftData model
+            withAnimation {
+                let newItem = Item(foodItem: foodItem)
+                modelContext.insert(newItem)
+                vm.showScannedItemView = false
+                vm.clearDataForNewScan()
+                vm.isScannerActive = false
+                dismiss()
+            }
+        }
+        
+        private func discardScan() {
+            // Implement discard logic here if needed, like clearing temporary data
             vm.showScannedItemView = false
             vm.clearDataForNewScan()
-            vm.isScannerActive = false
-            dismiss()
+            vm.refreshScannerView()
         }
     }
-    
-    private func discardScan() {
-        // Implement discard logic here if needed, like clearing temporary data
-        vm.showScannedItemView = false
-        vm.clearDataForNewScan()
-        vm.refreshScannerView()
-    }
-}
 
-
+                
+                

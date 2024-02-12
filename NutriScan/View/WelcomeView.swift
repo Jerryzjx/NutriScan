@@ -133,6 +133,9 @@ struct WelcomeView: View {
                             .font(.title)
                             .fontWeight(.bold)
                     }
+                    .task {
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(
@@ -141,6 +144,7 @@ struct WelcomeView: View {
                     .foregroundColor(.white)
                     .cornerRadius(25)
                 }
+               
                 .padding(40)
                // .padding(.bottom, 35)
                 
