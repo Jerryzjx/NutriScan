@@ -136,6 +136,7 @@ struct LogFoodView: View {
                             .fontWeight(.bold)
                     }
                 }
+                
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .foregroundColor(.white)
@@ -143,6 +144,7 @@ struct LogFoodView: View {
                 .cornerRadius(20)
             }
             .task {
+                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 vm.isScannerActive = true
                 await vm.requestDataScannerAccessStatus()
             }
@@ -152,6 +154,7 @@ struct LogFoodView: View {
             .frame(width: screenSize.width * 0.475, height: screenSize.width * 0.175)
             
             NavigationLink(destination: ManualLogView()) {
+                
                 HStack(spacing: 9) {
                     Image(systemName: "pencil.and.list.clipboard")
                         .font(Font.title.weight(.bold))
@@ -164,12 +167,17 @@ struct LogFoodView: View {
                             .fontWeight(.bold)
                     }
                 }
+               
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .foregroundColor(.white)
                 .background(Color("SeashoreL").opacity(0.3))
                 .cornerRadius(20)
             }
+            .task {
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            }
+            
             .padding()
             .background(Color.clear)
             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -200,8 +208,7 @@ struct ItemDetailView: View {
     var body: some View {
         ZStack{
             NavigationStack {
-                // Check if there is at least one item in itemDetails
-                
+               
                 VStack(alignment: .leading, spacing: 10) {
                     Form{
                         VStack (alignment: .leading, spacing: 10){
@@ -425,11 +432,6 @@ struct ItemDetailView: View {
         enum Nutrient {
             case fat, sugar, protein, sodium, saturatedFat, fibre, cholesterol, other
         }
-        
-        
-        
-        
-        
         
         func addFoodItem(foodItem: Item) {
             withAnimation {

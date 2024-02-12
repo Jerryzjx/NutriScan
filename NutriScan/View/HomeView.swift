@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @EnvironmentObject var vm: ScannerViewModel
+    @StateObject var nutriVM = NutritionViewModel()
+    
     @Default(\.currentTheme) var currentTheme
     var body: some View {
         TabView {
@@ -23,6 +26,7 @@ struct HomeView: View {
                 }
             
             BrowseView()
+                .environmentObject(nutriVM)
                 .tabItem {
                     Label("Browse", systemImage: "chart.bar.fill")
                 }
@@ -39,6 +43,4 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
-}
+

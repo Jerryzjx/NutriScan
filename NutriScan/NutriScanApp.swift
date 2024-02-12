@@ -12,6 +12,7 @@ import SwiftData
 struct NutriScanApp: App {
     
     @StateObject private var vm = ScannerViewModel()
+    
     @AppStorage("hasLaunchedBefore") var hasLaunchedBefore: Bool = false
     
     var sharedModelContainer: ModelContainer = {

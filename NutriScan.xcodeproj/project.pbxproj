@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564402B76E18A002A2BFC /* HealthKitManager.swift */; };
 		C40564432B76E574002A2BFC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564422B76E574002A2BFC /* SummaryView.swift */; };
-		C40564452B76EB2B002A2BFC /* NutritionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564442B76EB2B002A2BFC /* NutritionSettings.swift */; };
 		C40564482B76ECE3002A2BFC /* RingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564472B76ECE3002A2BFC /* RingShape.swift */; };
 		C405644A2B76EE3E002A2BFC /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40564492B76EE3E002A2BFC /* RingView.swift */; };
 		C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41270522B715A01003C6DDF /* ScannedItemView.swift */; };
@@ -32,6 +31,7 @@
 		C47A29622B70838C002AD677 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29612B70838C002AD677 /* APIManager.swift */; };
 		C47A29672B7088CC002AD677 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C47A29662B7088CC002AD677 /* Alamofire */; };
 		C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A29682B708B97002AD677 /* NutritionModel.swift */; };
+		C48CC2A82B7AB6DB00605D37 /* SimpleDailyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48CC2A72B7AB6DB00605D37 /* SimpleDailyChartView.swift */; };
 		C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4BC54762B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
 		C4BC54772B6EF30000A435AC /* Geist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4BC54742B6EF30000A435AC /* Geist-Regular.otf */; };
@@ -46,6 +46,13 @@
 		C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
 		C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
 		C4D58E2B2B6EF06D00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
+		C4FEC19E2B7A9C02009DFEAD /* DailyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC19D2B7A9C02009DFEAD /* DailyChartView.swift */; };
+		C4FEC1A02B7A9D6B009DFEAD /* WeeklyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC19F2B7A9D6B009DFEAD /* WeeklyChartView.swift */; };
+		C4FEC1A22B7A9D77009DFEAD /* MonthlyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A12B7A9D77009DFEAD /* MonthlyChartView.swift */; };
+		C4FEC1A42B7A9D85009DFEAD /* HourlyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A32B7A9D85009DFEAD /* HourlyChartView.swift */; };
+		C4FEC1A62B7A9E1E009DFEAD /* NutritionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A52B7A9E1E009DFEAD /* NutritionSummaryView.swift */; };
+		C4FEC1A82B7A9E44009DFEAD /* NutritionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A72B7A9E44009DFEAD /* NutritionViewModel.swift */; };
+		C4FEC1AA2B7AB457009DFEAD /* DetailDailyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A92B7AB457009DFEAD /* DetailDailyChartView.swift */; };
 		C4FEE6122B79B6D7004477F0 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = C4FEE6112B79B6D7004477F0 /* KeyboardKit */; };
 		C4FEE6142B79BB04004477F0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEE6132B79BB04004477F0 /* Defaults.swift */; };
 		C4FEE6162B79C58B004477F0 /* ThemeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEE6152B79C58B004477F0 /* ThemeSelectionView.swift */; };
@@ -72,7 +79,6 @@
 		C405643F2B76E0AF002A2BFC /* NutriScan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NutriScan.entitlements; sourceTree = "<group>"; };
 		C40564402B76E18A002A2BFC /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		C40564422B76E574002A2BFC /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		C40564442B76EB2B002A2BFC /* NutritionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSettings.swift; sourceTree = "<group>"; };
 		C40564472B76ECE3002A2BFC /* RingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingShape.swift; sourceTree = "<group>"; };
 		C40564492B76EE3E002A2BFC /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		C41270522B715A01003C6DDF /* ScannedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedItemView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		C45ADA422B69E27A001C34F9 /* NutriScanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutriScanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C47A29612B70838C002AD677 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C47A29682B708B97002AD677 /* NutritionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModel.swift; sourceTree = "<group>"; };
+		C48CC2A72B7AB6DB00605D37 /* SimpleDailyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDailyChartView.swift; sourceTree = "<group>"; };
 		C4BC54742B6EF30000A435AC /* Geist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.otf"; sourceTree = "<group>"; };
 		C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScannerView.swift; sourceTree = "<group>"; };
 		C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
@@ -105,6 +112,13 @@
 		C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
 		C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GeistVariableVF.ttf; path = ../../../Downloads/Geist/GeistVariableVF.ttf; sourceTree = "<group>"; };
 		C4D58E2C2B6EF08800E12C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C4FEC19D2B7A9C02009DFEAD /* DailyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChartView.swift; sourceTree = "<group>"; };
+		C4FEC19F2B7A9D6B009DFEAD /* WeeklyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChartView.swift; sourceTree = "<group>"; };
+		C4FEC1A12B7A9D77009DFEAD /* MonthlyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyChartView.swift; sourceTree = "<group>"; };
+		C4FEC1A32B7A9D85009DFEAD /* HourlyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyChartView.swift; sourceTree = "<group>"; };
+		C4FEC1A52B7A9E1E009DFEAD /* NutritionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionSummaryView.swift; sourceTree = "<group>"; };
+		C4FEC1A72B7A9E44009DFEAD /* NutritionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewModel.swift; sourceTree = "<group>"; };
+		C4FEC1A92B7AB457009DFEAD /* DetailDailyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDailyChartView.swift; sourceTree = "<group>"; };
 		C4FEE6132B79BB04004477F0 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		C4FEE6152B79C58B004477F0 /* ThemeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,7 +157,7 @@
 				C40564492B76EE3E002A2BFC /* RingView.swift */,
 				C41D65772B78055A0029A6AE /* NutrientCalculator.swift */,
 				C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */,
-				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
+				C4FEE6152B79C58B004477F0 /* ThemeSelectionView.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -152,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */,
+				C4FEC1A72B7A9E44009DFEAD /* NutritionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +222,7 @@
 				C4D58E232B6EEDB900E12C8B /* View */,
 				C4D58E222B6EEDB100E12C8B /* Model */,
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
+				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
 				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
 			);
@@ -243,7 +259,6 @@
 			children = (
 				C45ADA272B69E277001C34F9 /* Item.swift */,
 				C47A29682B708B97002AD677 /* NutritionModel.swift */,
-				C40564442B76EB2B002A2BFC /* NutritionSettings.swift */,
 				C4FEE6132B79BB04004477F0 /* Defaults.swift */,
 			);
 			path = Model;
@@ -252,20 +267,34 @@
 		C4D58E232B6EEDB900E12C8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4FEC19C2B7A95CD009DFEAD /* Charts */,
 				C40564462B76ECB3002A2BFC /* UI Components */,
 				C4BC547C2B6EFC5100A435AC /* BarCodeScannerView.swift */,
 				C41270522B715A01003C6DDF /* ScannedItemView.swift */,
 				C417367F2B71B5DC0025CC03 /* HomeView.swift */,
 				C41736812B71B5F20025CC03 /* WelcomeView.swift */,
 				C40564422B76E574002A2BFC /* SummaryView.swift */,
-				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C41D65732B77F9F10029A6AE /* LogFoodView.swift */,
 				C41D65792B7820700029A6AE /* ManualLogView.swift */,
 				C45112B62B785F2A005B1F5B /* BrowseView.swift */,
 				C42C7DFC2B78858B005403A1 /* SettingsView.swift */,
-				C4FEE6152B79C58B004477F0 /* ThemeSelectionView.swift */,
+				C4FEC1A52B7A9E1E009DFEAD /* NutritionSummaryView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C4FEC19C2B7A95CD009DFEAD /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				C41D65752B77FF460029A6AE /* DetailChartView.swift */,
+				C4FEC19D2B7A9C02009DFEAD /* DailyChartView.swift */,
+				C4FEC19F2B7A9D6B009DFEAD /* WeeklyChartView.swift */,
+				C4FEC1A12B7A9D77009DFEAD /* MonthlyChartView.swift */,
+				C4FEC1A32B7A9D85009DFEAD /* HourlyChartView.swift */,
+				C4FEC1A92B7AB457009DFEAD /* DetailDailyChartView.swift */,
+				C48CC2A72B7AB6DB00605D37 /* SimpleDailyChartView.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,11 +443,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41270532B715A01003C6DDF /* ScannedItemView.swift in Sources */,
+				C4FEC19E2B7A9C02009DFEAD /* DailyChartView.swift in Sources */,
+				C4FEC1A22B7A9D77009DFEAD /* MonthlyChartView.swift in Sources */,
+				C4FEC1A82B7A9E44009DFEAD /* NutritionViewModel.swift in Sources */,
 				C42C7DFD2B78858B005403A1 /* SettingsView.swift in Sources */,
 				C40564432B76E574002A2BFC /* SummaryView.swift in Sources */,
 				C47A29622B70838C002AD677 /* APIManager.swift in Sources */,
 				C45ADA262B69E277001C34F9 /* ContentView.swift in Sources */,
 				C4BC54812B6F1B6400A435AC /* ScannerViewModel.swift in Sources */,
+				C4FEC1A62B7A9E1E009DFEAD /* NutritionSummaryView.swift in Sources */,
 				C4BC547D2B6EFC5100A435AC /* BarCodeScannerView.swift in Sources */,
 				C405644A2B76EE3E002A2BFC /* RingView.swift in Sources */,
 				C4FEE6142B79BB04004477F0 /* Defaults.swift in Sources */,
@@ -427,16 +460,19 @@
 				C41736822B71B5F20025CC03 /* WelcomeView.swift in Sources */,
 				C41D65742B77F9F10029A6AE /* LogFoodView.swift in Sources */,
 				C47A29692B708B97002AD677 /* NutritionModel.swift in Sources */,
+				C48CC2A82B7AB6DB00605D37 /* SimpleDailyChartView.swift in Sources */,
 				C4FEE6162B79C58B004477F0 /* ThemeSelectionView.swift in Sources */,
 				C40564482B76ECE3002A2BFC /* RingShape.swift in Sources */,
 				C45ADA242B69E277001C34F9 /* NutriScanApp.swift in Sources */,
 				C41D657A2B7820700029A6AE /* ManualLogView.swift in Sources */,
+				C4FEC1AA2B7AB457009DFEAD /* DetailDailyChartView.swift in Sources */,
 				C41D65762B77FF460029A6AE /* DetailChartView.swift in Sources */,
 				C40564412B76E18A002A2BFC /* HealthKitManager.swift in Sources */,
 				C45112B72B785F2A005B1F5B /* BrowseView.swift in Sources */,
+				C4FEC1A02B7A9D6B009DFEAD /* WeeklyChartView.swift in Sources */,
+				C4FEC1A42B7A9D85009DFEAD /* HourlyChartView.swift in Sources */,
 				C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */,
 				C41D65782B78055A0029A6AE /* NutrientCalculator.swift in Sources */,
-				C40564452B76EB2B002A2BFC /* NutritionSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
