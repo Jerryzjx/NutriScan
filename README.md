@@ -42,7 +42,7 @@ Check out NutriList! A Smart Grocery List!
 
 ## Features:
 - Nutrition Tracker with barcode scanner for food logging using VisionKit
-- Nutrition Facts Data Powered by REST API
+- Nutrition Facts Data Powered by a REST API
 - Privacy: All user data saved locally using SwiftData
 - Design: Minimalist UI Design with 3 themes (adding more soon!)
 - Interactive: Over 30 Interactive Charts, track and see your nutrient intake daily, weekly, monthly and even yearly!
