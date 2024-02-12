@@ -41,12 +41,12 @@ If you are interested in testing the app, please feel free to email me: [![Email
 Check out NutriList! A Smart Grocery List!
 
 ## Features:
-- Nutrition Tracker with barcode scanner for food logging using VisionKit
-- Nutrition Facts Data Powered by a REST API
+- About: Nutrition Tracker with barcode scanner for food logging using VisionKit
+- Data: Nutrition Facts Data Powered by a REST API
 - Privacy: All user data saved locally using SwiftData
+- Interactive: Over 30 Interactive Charts, track and see your nutrient intake daily, weekly, and monthly!
 - Design: Minimalist UI Design with 3 themes (adding more soon!)
-- Interactive: Over 30 Interactive Charts, track and see your nutrient intake daily, weekly, monthly and even yearly!
-- HealthKit: Able to log nutrition data to HealthKit
+- HealthKit: Ability to log nutrition data to HealthKit
 
 <p align="left">
   <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9078.PNG" width=350>
