@@ -47,6 +47,7 @@ Check out NutriList! A Smart Grocery List!
 - Interactive: Over 40 Interactive Charts, track and see your nutrient intake daily, weekly, and monthly!
 - Design: Minimalist UI Design with 3 themes (adding more soon!)
 - HealthKit: Ability to log nutrition data to HealthKit
+## Check out Demo video below!
 
 <p align="left">
   <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9078.PNG" width=350>
@@ -58,7 +59,16 @@ Check out NutriList! A Smart Grocery List!
 
 ## Demo
 
-<p align="left>
-<video src="https://github.com/Jerryzjx/NutriScan/blob/main/External/NutriScan%20Manual%20Log.mp4" width="300" />
+https://github.com/Jerryzjx/NutriScan/assets/51298508/e958ce3e-a3b2-4e30-b3c2-52bc2e0a9117
+
+https://github.com/Jerryzjx/NutriScan/assets/51298508/1501f2e2-6031-4483-a2fe-2690375e63a3
+
+https://github.com/Jerryzjx/NutriScan/assets/51298508/cb6ff4eb-d72a-4347-b0f8-be633b600167
+
+https://github.com/Jerryzjx/NutriScan/assets/51298508/1e5bd9a2-3917-46af-b481-a15d781fb49d
+
+https://github.com/Jerryzjx/NutriScan/assets/51298508/9c181413-8d4f-402a-894f-ca245444f611
+
+
   
-</p>
+
