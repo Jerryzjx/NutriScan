@@ -144,7 +144,7 @@ struct LogFoodView: View {
                 .cornerRadius(20)
             }
             .task {
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                
                 vm.isScannerActive = true
                 await vm.requestDataScannerAccessStatus()
             }
@@ -174,9 +174,7 @@ struct LogFoodView: View {
                 .background(Color("SeashoreL").opacity(0.3))
                 .cornerRadius(20)
             }
-            .task {
-                UIImpactFeedbackGenerator(style: .light).impactOccurred()
-            }
+           
             
             .padding()
             .background(Color.clear)

@@ -1,5 +1,5 @@
 //
-//  DetailDailyChartView.swift
+//  DetailMonthlyChart.swift
 //  NutriScan
 //
 //  Created by leonard on 2024-02-12.
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 import Charts
 
-struct DetailDailyChartView: View {
+struct DetailMonthlyChart: View {
     @ObservedObject var viewModel: NutritionViewModel
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
@@ -44,3 +44,4 @@ struct DetailDailyChartView: View {
             .padding()
         }
 }
+

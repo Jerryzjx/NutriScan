@@ -1,5 +1,5 @@
 //
-//  SimpleDailyChartView.swift
+//  SimpleMonthlyChart.swift
 //  NutriScan
 //
 //  Created by leonard on 2024-02-12.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct SimpleDailyChartView: View {
+struct SimpleMonthlyChartView: View {
     @ObservedObject var viewModel: NutritionViewModel
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
@@ -28,12 +28,12 @@ struct SimpleDailyChartView: View {
     var body: some View {
         VStack (alignment: .leading){
             
-            // calculate daily average for past 7 days and display it
-            let pastWeekAvg = viewModel.averageIntakePastSevenDays(nutrientType: nutrientType, items: items)
+            
+            let pastMonthAvg = viewModel.averageIntakePastMonth(nutrientType: nutrientType, items: items)
             Text("Average")
                 .font(.headline)
             HStack (alignment: .firstTextBaseline){
-                Text("\(pastWeekAvg, specifier: "%.0f")")
+                Text("\(pastMonthAvg, specifier: "%.0f")")
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.semibold)
                     .foregroundColor(.primary)
@@ -45,11 +45,10 @@ struct SimpleDailyChartView: View {
                 
             }
             
-            DailyChartView(viewModel: viewModel, nutrientType: nutrientType, name: name)
+            WeeklyChartView(viewModel: viewModel, nutrientType: nutrientType, name: name)
                 .frame(height: 100)
                 .chartXAxis(.hidden)
                 .chartYAxis(.hidden)
         }
     }
 }
-

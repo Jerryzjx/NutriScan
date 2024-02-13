@@ -16,31 +16,21 @@ struct DailyChartView: View {
     var nutrientType: NutrientType
     var name: String
     
-        var body: some View {
+    var body: some View {
+            let today = Calendar.current.startOfDay(for: Date())
+
             VStack {
-                
-                    Chart {
-                        ForEach(viewModel.nutrientIntakeByDay(nutrientType: nutrientType, items: items), id: \.date) { intake in
-                            BarMark(
-                                x: .value("Date", intake.date, unit: .day),
-                                y: .value("Calories", intake.totalIntake)
-                            )
-                            .foregroundStyle(Color("EmeraldL"))
-                        }
+                Chart {
+                    ForEach(viewModel.nutrientIntakeByHour(nutrientType: nutrientType, items: items, forDay: today), id: \.hour) { intake in
+                        BarMark(
+                            x: .value("Hour", intake.hour),
+                            y: .value(name, intake.totalIntake) // Using 'name' for dynamic nutrient type
+                        )
+                        .foregroundStyle(Color("EmeraldL"))
                     }
-                    .chartXAxis {
-                        AxisMarks(values: .stride(by: Calendar.Component.day)) { _ in
-                            AxisGridLine()
-                            AxisTick()
-                            AxisValueLabel(format: .dateTime.weekday(.abbreviated))
-                        }
-                    }
-                    .chartYAxis {
-                        AxisMarks()
-                    }
-                
+                }
             }
             .padding()
         }
-}
+    }
 

@@ -86,7 +86,14 @@ class NutritionViewModel: ObservableObject {
                 return item.nfProtein
             case .carbohydrates:
                 return item.nfTotalCarbohydrate
-            
+            case .fats:
+                return item.nfTotalFat
+            case .sugar:
+                return item.nfSugars
+            case .saturatedFats:
+                return item.nfSaturatedFat
+            case .fiber:
+                return item.nfDietaryFiber
             default:
                 return nil
             }
@@ -168,6 +175,20 @@ class NutritionViewModel: ObservableObject {
 
         let totalIntake = pastMonthIntakes.reduce(0) { $0 + $1.totalIntake }
         return pastMonthIntakes.isEmpty ? 0 : totalIntake / Double(pastMonthIntakes.count)
+    }
+    
+    func averageIntakePastSixMonths(nutrientType: NutrientType, items: [Item]) -> Double {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today)!
+
+        let dailyIntakes = nutrientIntakeByDay(nutrientType: nutrientType, items: items)
+        let pastSixMonthsIntakes = dailyIntakes.filter { $0.date >= sixMonthsAgo && $0.date <= today }
+
+        let totalIntake = pastSixMonthsIntakes.reduce(0) { $0 + $1.totalIntake }
+        // Calculate the number of days in the past 6 months
+        let numberOfDaysInSixMonths = calendar.dateComponents([.day], from: sixMonthsAgo, to: today).day!
+        return pastSixMonthsIntakes.isEmpty ? 0 : totalIntake / Double(numberOfDaysInSixMonths)
     }
     
     func totalIntakeToday(nutrientType: NutrientType, items: [Item]) -> Double {
