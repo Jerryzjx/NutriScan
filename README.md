@@ -57,6 +57,6 @@ Check out NutriList! A Smart Grocery List!
 ## Demo
 
 <p align="left>
-<video src="https://github.com/Jerryzjx/NutriScan/blob/main/External/NutriScan-Barcode%20Scanner%20Demo.mov" width="300" />
+<video src="https://github.com/Jerryzjx/NutriScan/blob/main/External/NutriScan%20Manual%20Log.mp4" width="300" />
   
 </p>
