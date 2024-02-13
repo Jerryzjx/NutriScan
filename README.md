@@ -50,7 +50,9 @@ Check out NutriList! A Smart Grocery List!
 
 <p align="left">
   <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9078.PNG" width=350>
-
+  <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9154.PNG" width=350>
+  <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9155.PNG" width=350>
+  <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9156.PNG" width=350>
 
 </p>
 
