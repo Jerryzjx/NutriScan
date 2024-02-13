@@ -50,5 +50,13 @@ Check out NutriList! A Smart Grocery List!
 
 <p align="left">
   <img src = "https://github.com/Jerryzjx/NutriScan/blob/main/External/IMG_9078.PNG" width=350>
+
+
+</p>
+
+## Demo
+
+<p align="left>
+<video src="https://github.com/Jerryzjx/NutriScan/blob/main/External/NutriScan-Barcode%20Scanner%20Demo.mov" width="300" />
   
 </p>
