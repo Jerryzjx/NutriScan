@@ -41,6 +41,7 @@ struct LogFoodView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
     @Default(\.currentTheme) var currentTheme
+    @Default(\.isHealthKitEnabled) var isHealthKitEnabled
     
     @EnvironmentObject var vm: ScannerViewModel
     let screenSize: CGRect = UIScreen.main.bounds
@@ -201,6 +202,7 @@ struct ItemDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
     @Default(\.currentTheme) var currentTheme
+    @Default(\.isHealthKitEnabled) var isHealthKitEnabled
     let screenSize: CGRect = UIScreen.main.bounds
     
     var body: some View {
@@ -222,7 +224,7 @@ struct ItemDetailView: View {
                         Section(header: Text("Serving information")) {
                             HStack {
                                 Text("Serving Size:")
-                                    .font(.subheadline) // Smaller text for the label
+                                    .font(.subheadline)
                                     .fontWeight(.regular)
                                     .foregroundColor(.gray)
                                 
@@ -233,7 +235,7 @@ struct ItemDetailView: View {
                             
                             HStack {
                                 Text("Serving Quantity:")
-                                    .font(.subheadline) // Smaller text for the label
+                                    .font(.subheadline)
                                     .fontWeight(.regular)
                                     .foregroundColor(.gray)
                                 
@@ -359,7 +361,7 @@ struct ItemDetailView: View {
                         }
                         .toolbar {
                             // Define the toolbar items here
-                            ToolbarItem(placement: .navigationBarTrailing) { // Adjust placement as needed
+                            ToolbarItem(placement: .navigationBarTrailing) {
                                 Button(action: {
                                     addFoodItem(foodItem: foodItem)
                                     // success haptics
@@ -408,7 +410,7 @@ struct ItemDetailView: View {
         }
         
         func calculateDailyValue(nutrient: Nutrient, value: Double) -> Double? {
-            // Placeholder function to calculate %DV based on nutrient type and value
+           
             switch nutrient {
             case .fat:
                 return (value / 75) * 100
@@ -432,6 +434,21 @@ struct ItemDetailView: View {
         }
         
         func addFoodItem(foodItem: Item) {
+            if isHealthKitEnabled {
+                let healthKitManager = HealthKitManager()
+                
+                
+                healthKitManager.saveNutritionalDataFromItem(for: foodItem) { success, error in
+                    
+                    if success {
+                        
+                        print("Data saved to HealthKit")
+                    } else if let error = error {
+                        
+                        print("Error saving data to HealthKit: \(error.localizedDescription)")
+                    }
+                }
+            }
             withAnimation {
                 let newItem = Item(from: foodItem)
                 modelContext.insert(newItem)

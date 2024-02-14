@@ -3,6 +3,7 @@ import SwiftUI
 struct ManualLogView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
+    @Default(\.isHealthKitEnabled) var isHealthKitEnabled
     
     @State private var showingAlert = false
     @State private var foodName = ""
@@ -276,6 +277,8 @@ struct ManualLogView: View {
     }
     
     private func logFood() {
+        
+       
         // check if all required fields are filled
         guard !foodName.isEmpty, let adjustedCalories = adjustedCalories else {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -305,6 +308,21 @@ struct ManualLogView: View {
             nfP: nil
         )
         
+        if isHealthKitEnabled {
+            let healthKitManager = HealthKitManager()
+            
+            
+            healthKitManager.saveNutritionalDataFromItem(for: newItem) { success, error in
+                
+                if success {
+                    
+                    print("Data saved to HealthKit")
+                } else if let error = error {
+                    
+                    print("Error saving data to HealthKit: \(error.localizedDescription)")
+                }
+            }
+        }
         withAnimation {
             modelContext.insert(newItem)
             dismiss()

@@ -12,6 +12,7 @@ struct ScannedItemView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     @Default(\.currentTheme) var currentTheme
+    @Default(\.isHealthKitEnabled) var isHealthKitEnabled
     let screenSize: CGRect = UIScreen.main.bounds
     
     var body: some View {
@@ -71,7 +72,7 @@ struct ScannedItemView: View {
                             Section(header: Text("Serving information")) {
                                 HStack {
                                     Text("Serving Size:")
-                                        .font(.subheadline) // Smaller text for the label
+                                        .font(.subheadline) 
                                         .fontWeight(.regular)
                                         .foregroundColor(.gray)
                                     
@@ -82,7 +83,7 @@ struct ScannedItemView: View {
                                 
                                 HStack {
                                     Text("Serving Quantity:")
-                                        .font(.subheadline) // Smaller text for the label
+                                        .font(.subheadline)
                                         .fontWeight(.regular)
                                         .foregroundColor(.gray)
                                     
@@ -242,7 +243,7 @@ struct ScannedItemView: View {
         }
         
         func calculateDailyValue(nutrient: Nutrient, value: Double) -> Double? {
-            // Placeholder function to calculate %DV based on nutrient type and value
+           
             switch nutrient {
             case .fat:
                 return (value / 75) * 100
@@ -267,7 +268,23 @@ struct ScannedItemView: View {
         
         
         private func saveScan(FoodItem foodItem: FoodItem) {
-            // Implement saving logic here, possibly updating the SwiftData model
+            if isHealthKitEnabled {
+                let healthKitManager = HealthKitManager()
+                
+                
+                healthKitManager.saveNutritionalDataFromFoodItem(for: foodItem, date: Date()) { success, error in
+                    
+                    if success {
+                        
+                        print("Data saved to HealthKit")
+                    } else if let error = error {
+                        
+                        print("Error saving data to HealthKit: \(error.localizedDescription)")
+                    }
+                }
+            }
+            
+            
             withAnimation {
                 let newItem = Item(foodItem: foodItem)
                 modelContext.insert(newItem)
@@ -279,7 +296,7 @@ struct ScannedItemView: View {
         }
         
         private func discardScan() {
-            // Implement discard logic here if needed, like clearing temporary data
+            
             vm.showScannedItemView = false
             vm.clearDataForNewScan()
             vm.refreshScannerView()

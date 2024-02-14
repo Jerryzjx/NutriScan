@@ -175,7 +175,7 @@ struct SettingsView: View {
                                 }
                                 isInputFieldFocused = nil
                                 newFatGoal = ""
-                                // Reset focus or perform additional actions as necessary
+                               
                             default:
                                 break
                             }
@@ -188,7 +188,11 @@ struct SettingsView: View {
                                 Text("Save Data to Health App")
                             }
                         }
-                        
+                        .onChange(of: isHealthKitEnabled, initial: false){
+                            if isHealthKitEnabled {
+                                requestHealthKitAuthorization()
+                            }
+                        }
                         
                         
                         Section {
@@ -232,10 +236,15 @@ struct SettingsView: View {
             }
             
         }
-        
+        func requestHealthKitAuthorization() {
+       
+        let healthKitManager = HealthKitManager()
+        healthKitManager.requestAuthorization()
+        }
+    
         func validateAndStoreInput(_ input: String, for nutrient: String) {
             guard let value = Int(input), value >= 1, value <= 5000 else {
-                // Handle invalid input, e.g., show an alert or reset to a default value
+               
                 return
             }
             
@@ -243,16 +252,16 @@ struct SettingsView: View {
             case "Calories":
                 caloriesGoalText = String(value)
             case "Carbohydrates":
-                // Perform similar validation for carbohydrates if necessary
+                
                 carbohydrateGoalText = String(value)
             case "Protein":
-                // Perform similar validation for protein if necessary
+                
                 proteinGoalText = String(value)
             case "Fat":
-                // Perform similar validation for fat if necessary
+                
                 fatGoalText = String(value)
             default:
-                break // Unknown nutrient, handle appropriately
+                break
             }
         }
     }

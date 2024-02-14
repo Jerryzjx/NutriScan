@@ -57,7 +57,7 @@ struct SummaryView: View {
     }
     let screenSize: CGRect = UIScreen.main.bounds
     
-    @StateObject var healthKitManager = HealthKitManager.shared
+    //@StateObject var healthKitManager = HealthKitManager.shared
     
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
