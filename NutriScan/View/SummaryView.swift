@@ -78,7 +78,7 @@ struct SummaryView: View {
     
     var body: some View {
         NavigationStack {
-            
+            ScrollView {
                 ZStack{
                     VStack(alignment: .center){
                         ZStack {
@@ -95,30 +95,30 @@ struct SummaryView: View {
                                 .offset(x: 0, y: -20.0)
                                 .shadow(color: .black, radius: 4, x: 0.0, y: 0.0)
                         }
-                     //   .ignoresSafeArea()
+                        //   .ignoresSafeArea()
                         Spacer()
                         Spacer()
                         
-                            NavigationLink(destination: DetailChartView(nutritionType: "Calories", nutriToday: todaysNutrition.calories, nutriUnit: "Cal", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Calories", unit: "Cal", nutriToday: todaysNutrition.calories, nutriConst: caloriesGoal, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
-                            }
-                            Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Protein", nutriToday: todaysNutrition.protein, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: proteinGoal, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
-                            }
-                            Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Carbohydrate", nutriToday: todaysNutrition.carbs, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Carbohydrate",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: carbohydrateGoal, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
-                            }
-                            Spacer()
-                            NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
-                                nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: fatGoal, bgColor: Color("SunsetL"), fgColors: [Color("SunsetL"), Color("SunsetR")])
-                            }
-                            Spacer()
-                            Spacer()
+                        NavigationLink(destination: DetailChartView(nutritionType: "Calories", nutriToday: todaysNutrition.calories, nutriUnit: "Cal", rawSelectedHour: $selectedHour)) {
+                            nutriDisplayView(name: "Calories", unit: "Cal", nutriToday: todaysNutrition.calories, nutriConst: caloriesGoal, bgColor: Color("EmeraldL"), fgColors: [Color("EmeraldL"), Color("EmeraldR")])
+                        }
+                        Spacer()
+                        NavigationLink(destination: DetailChartView(nutritionType: "Protein", nutriToday: todaysNutrition.protein, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
+                            nutriDisplayView(name: "Protein",  unit: "g",nutriToday: todaysNutrition.protein, nutriConst: proteinGoal, bgColor: Color("SeashoreL"), fgColors: [Color("SeashoreL"), Color("SeashoreR")])
+                        }
+                        Spacer()
+                        NavigationLink(destination: DetailChartView(nutritionType: "Carbohydrate", nutriToday: todaysNutrition.carbs, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
+                            nutriDisplayView(name: "Carbohydrate",  unit: "g", nutriToday: todaysNutrition.carbs, nutriConst: carbohydrateGoal, bgColor: Color("VioletR"), fgColors: [Color("VioletL"), Color("VioletR")])
+                        }
+                        Spacer()
+                        NavigationLink(destination: DetailChartView(nutritionType: "Fat", nutriToday: todaysNutrition.fat, nutriUnit: "g", rawSelectedHour: $selectedHour)) {
+                            nutriDisplayView(name: "Fat",  unit: "g", nutriToday: todaysNutrition.fat, nutriConst: fatGoal, bgColor: Color("SunsetL"), fgColors: [Color("SunsetL"), Color("SunsetR")])
+                        }
+                        Spacer()
+                        Spacer()
                         
+                    }
                 }
-                
                 
             }
                 .navigationTitle("Summary")
