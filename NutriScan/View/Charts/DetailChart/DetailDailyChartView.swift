@@ -258,6 +258,12 @@ struct DetailDailyChartView: View {
                         return item.nfTotalCarbohydrate ?? 0
                     case "Protein":
                         return item.nfProtein ?? 0
+                    case "Saturated Fats":
+                        return item.nfSaturatedFat ?? 0
+                    case "Fiber":
+                        return item.nfDietaryFiber ?? 0
+                    case "Sugar":
+                        return item.nfSugars ?? 0
                     default:
                         return 0
                     }
