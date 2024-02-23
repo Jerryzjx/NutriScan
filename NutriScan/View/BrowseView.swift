@@ -23,7 +23,9 @@ let nutrientlist = [
     Nutrient(name: "Sugar", type: .sugar, symbolName: "carrot.fill"),
     Nutrient(name: "Fiber", type: .fiber, symbolName: "carrot.fill"),
     Nutrient(name: "Fats", type: .fats, symbolName: "carrot.fill"),
-    Nutrient(name: "Saturated Fats", type: .saturatedFats, symbolName: "carrot.fill")
+    Nutrient(name: "Saturated Fats", type: .saturatedFats, symbolName: "carrot.fill"),
+    Nutrient(name: "Sodium", type: .sodium, symbolName: "carrot.fill"),
+    Nutrient(name: "Cholesterol", type: .cholesterol, symbolName: "carrot.fill")
 ]
 
 struct WaveShapeBrowse: Shape {

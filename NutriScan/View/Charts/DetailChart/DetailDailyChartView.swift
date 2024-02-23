@@ -25,6 +25,8 @@ struct DetailDailyChartView: View {
         switch nutrientType {
         case .calories:
             return "kcal"
+        case .sodium, .cholesterol:
+            return "mg"
         default:
             return "g"
         }
@@ -264,6 +266,10 @@ struct DetailDailyChartView: View {
                         return item.nfDietaryFiber ?? 0
                     case "Sugar":
                         return item.nfSugars ?? 0
+                    case "Sodium":
+                        return item.nfSodium ?? 0
+                    case "Cholesterol":
+                        return item.nfCholesterol ?? 0
                     default:
                         return 0
                     }

@@ -20,6 +20,8 @@ struct SimpleWeeklyChartView: View {
             switch nutrientType {
             case .calories:
                 return "kcal"
+            case .sodium, .cholesterol:
+                return "mg"
             default:
                 return "g"
             }

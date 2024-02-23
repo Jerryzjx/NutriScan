@@ -16,6 +16,8 @@ enum NutrientType {
     case fiber
     case fats
     case saturatedFats
+    case sodium
+    case cholesterol
 }
 
 class NutritionViewModel: ObservableObject {
@@ -94,6 +96,10 @@ class NutritionViewModel: ObservableObject {
                 return item.nfSaturatedFat
             case .fiber:
                 return item.nfDietaryFiber
+            case .sodium:
+                return item.nfSodium
+            case .cholesterol:
+                return item.nfCholesterol
             default:
                 return nil
             }
