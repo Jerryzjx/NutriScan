@@ -31,11 +31,11 @@ struct SimpleWeeklyChartView: View {
         VStack (alignment: .leading){
             
             
-            let pastMonthAvg = viewModel.averageIntakePastMonth(nutrientType: nutrientType, items: items)
+            let pastWeekAvg = viewModel.averageIntakePastSevenDays(nutrientType: nutrientType, items: items)
             Text("Average")
                 .font(.headline)
             HStack (alignment: .firstTextBaseline){
-                Text("\(pastMonthAvg, specifier: "%.0f")")
+                Text("\(pastWeekAvg, specifier: "%.0f")")
                     .font(.system(.title, design: .rounded))
                     .fontWeight(.semibold)
                     .foregroundColor(.primary)

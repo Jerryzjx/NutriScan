@@ -22,7 +22,7 @@ struct WeeklyChartView: View {
                 let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
                 
                 
-                let filteredItems = items.filter { $0.timestamp > startDate && $0.timestamp <= Date() }
+                let filteredItems = items.filter { $0.timestamp >= startDate && $0.timestamp <= Date() }
                 
                 VStack {
                     Chart {
