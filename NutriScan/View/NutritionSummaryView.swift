@@ -57,6 +57,23 @@ struct NutritionSummaryView: View {
                         .padding(5)
                 )
                 
+                VStack (alignment: .leading){
+                    Text("Past Month")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    NavigationLink (destination: DetailMonthlyChart(vm: nutriVM, name: name, rawSelectedDate: $selectedDate, nutrientType: nutrientType)){
+                        SimpleMonthlyChartView(viewModel: nutriVM, nutrientType: nutrientType, name: name)
+                   }
+                .isDetailLink(false)
+                }
+                .padding(7)
+                .listRowSeparator(.hidden)
+                .listRowBackground(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color(uiColor: .secondarySystemBackground))
+                        .padding(5)
+                )
+                
             }
             .background(Color(uiColor: .systemBackground))
             .navigationTitle(name)

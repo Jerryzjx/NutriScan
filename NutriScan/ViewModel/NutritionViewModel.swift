@@ -174,7 +174,7 @@ class NutritionViewModel: ObservableObject {
     func averageIntakePastMonth(nutrientType: NutrientType, items: [Item]) -> Double {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
-        let thirtyDaysAgo = calendar.date(byAdding: .month, value: -1, to: today)!
+        let thirtyDaysAgo = calendar.date(byAdding: .day, value: -30, to: today)!
 
         let dailyIntakes = nutrientIntakeByDay(nutrientType: nutrientType, items: items)
         let pastMonthIntakes = dailyIntakes.filter { $0.date >= thirtyDaysAgo && $0.date <= today }
