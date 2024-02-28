@@ -169,10 +169,10 @@ struct DetailWeeklyChart: View {
                 
                 if let selectedDate {
                     RuleMark(
-                        x: .value("Selected", selectedDate, unit: .hour)
+                        x: .value("Selected", selectedDate, unit: .day)
                     )
                     .foregroundStyle(Color.gray.opacity(0.3))
-                    .offset(x: 25, yStart: -5)
+                    .offset(x: 0, yStart: -5)
                     .zIndex(-1)
                     .annotation(
                         position: .top, spacing: 1,
