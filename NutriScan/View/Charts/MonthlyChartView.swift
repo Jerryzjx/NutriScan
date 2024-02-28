@@ -9,6 +9,8 @@ import SwiftUI
 import SwiftData
 import Charts
 
+// View Data for Past 30 days
+
 struct MonthlyChartView: View {
     @ObservedObject var viewModel: NutritionViewModel
     @Environment(\.modelContext) var modelContext
@@ -18,28 +20,26 @@ struct MonthlyChartView: View {
     var name: String
     
     var body: some View {
+        
+        let startDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+        
+        
+        let filteredItems = items.filter { $0.timestamp >= startDate && $0.timestamp <= Date() }
+        
         VStack {
             Chart {
-                ForEach(viewModel.nutrientIntakeByMonth(nutrientType: nutrientType, items: items), id: \.month) { intake in
+                ForEach(viewModel.nutrientIntakeByDay(nutrientType: nutrientType, items: filteredItems), id: \.date) { intake in
                     BarMark(
-                        x: .value("Month", intake.month),
-                        y: .value("Average Intake", intake.averageDailyIntake)
+                        x: .value("Date", intake.date, unit: .day),
+                        y: .value("Calories", intake.totalIntake)
                     )
                     .foregroundStyle(Color("EmeraldL"))
                 }
             }
             
-            .chartXAxis {
-                AxisMarks(values: .stride(by: Calendar.Component.month)) { _ in
-                    AxisGridLine()
-                    AxisTick()
-                    AxisValueLabel(format: .dateTime.month(.abbreviated))
-                }
-            }
-            .chartYAxis {
-                AxisMarks()
-            }
+            
         }
         .padding()
     }
 }
+

@@ -45,7 +45,7 @@ struct SimpleMonthlyChartView: View {
                 
             }
             
-            WeeklyChartView(viewModel: viewModel, nutrientType: nutrientType, name: name)
+           MonthlyChartView(viewModel: viewModel, nutrientType: nutrientType, name: name)
                 .frame(height: 100)
                 .chartXAxis(.hidden)
                 .chartYAxis(.hidden)
