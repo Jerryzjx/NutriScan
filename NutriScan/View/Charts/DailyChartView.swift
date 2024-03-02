@@ -13,6 +13,7 @@ struct DailyChartView: View {
     @ObservedObject var viewModel: NutritionViewModel
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
+    @Default(\.currentTheme) var currentTheme
     var nutrientType: NutrientType
     var name: String
     
@@ -26,7 +27,7 @@ struct DailyChartView: View {
                             x: .value("Hour", intake.hour),
                             y: .value(name, intake.totalIntake) // Using 'name' for dynamic nutrient type
                         )
-                        .foregroundStyle(Color("EmeraldL"))
+                        .foregroundStyle(colorFromString(currentTheme))
                     }
                 }
             }
