@@ -28,6 +28,7 @@ struct DetailChartView: View {
     
     @State private var nutrientData: [NutrientIntakePerHour] = []
     @Binding var rawSelectedHour: Date?
+    @Default(\.currentTheme) var currentTheme
     
     var selectedHour: Date? {
         guard let rawSelectedHour = rawSelectedHour else { return nil }
@@ -111,7 +112,7 @@ struct DetailChartView: View {
                                 x: .value("Hour", nutrient.hour, unit: .hour),
                                 y: .value("Intake", nutrient.intake)
                             )
-                            .foregroundStyle(Gradient(colors: [Color("EmeraldL"), Color("EmeraldR")]))
+                            .foregroundStyle(colorFromString(currentTheme))
                             
                         }
                         
