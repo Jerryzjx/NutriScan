@@ -13,6 +13,7 @@ struct WeeklyChartView: View {
     @ObservedObject var viewModel: NutritionViewModel
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
+    @Default(\.currentTheme) var currentTheme
     var nutrientType: NutrientType
     let screenSize = UIScreen.main.bounds.size
     var name: String
@@ -31,7 +32,7 @@ struct WeeklyChartView: View {
                                 x: .value("Date", intake.date, unit: .day),
                                 y: .value("Calories", intake.totalIntake)
                             )
-                            .foregroundStyle(Color("EmeraldL"))
+                            .foregroundStyle(colorFromString(currentTheme))
                         }
                     }
                     .chartXAxis {
