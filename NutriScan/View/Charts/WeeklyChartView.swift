@@ -19,7 +19,7 @@ struct WeeklyChartView: View {
     
     var body: some View {
       
-                let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+                let startDate = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
                 
                 
                 let filteredItems = items.filter { $0.timestamp >= startDate && $0.timestamp <= Date() }
