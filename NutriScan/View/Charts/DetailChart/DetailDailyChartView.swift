@@ -17,6 +17,7 @@ struct DetailDailyChartView: View {
     
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
+    @Default(\.currentTheme) var currentTheme
     
     var nutritionType: String
     var nutrientType: NutrientType
@@ -116,7 +117,7 @@ struct DetailDailyChartView: View {
                                 x: .value("Hour", nutrient.hour, unit: .hour),
                                 y: .value("Intake", nutrient.intake)
                             )
-                            .foregroundStyle(Gradient(colors: [Color("EmeraldL"), Color("EmeraldR")]))
+                            .foregroundStyle(colorFromString(currentTheme))
                             
                         }
                         

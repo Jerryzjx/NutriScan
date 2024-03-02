@@ -12,7 +12,7 @@ struct DetailWeeklyChart: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
     @ObservedObject var vm: NutritionViewModel
-    
+    @Default(\.currentTheme) var currentTheme
 
     var name: String
     let screenSize = UIScreen.main.bounds.size
@@ -164,7 +164,7 @@ struct DetailWeeklyChart: View {
                             x: .value("Day", dataPoint.day, unit: .day),
                             y: .value("Intake", dataPoint.intake)
                         )
-                        .foregroundStyle(Gradient(colors: [Color("EmeraldL"), Color("EmeraldR")]))
+                        .foregroundStyle(colorFromString(currentTheme))
                     }
                 
                 if let selectedDate {
