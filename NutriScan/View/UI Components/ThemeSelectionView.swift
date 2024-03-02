@@ -14,6 +14,8 @@ extension Color {
     static let themeSeashoreR = Color("SeashoreR")
     static let themeSunsetL = Color("SunsetL")
     static let themeSunsetR = Color("SunsetR")
+    static let themeFerrariL = Color("FerrariL")
+    static let themeFerrariR = Color("FerrariR")
 }
 
 // Convert the string to the appropriate LinearGradient
@@ -25,6 +27,8 @@ func gradientFromString(_ gradientString: String) -> LinearGradient {
         return LinearGradient(gradient: Gradient(colors: [.themeSeashoreL, .themeSeashoreR]), startPoint: .leading, endPoint: .trailing)
     case "Sunset":
         return LinearGradient(gradient: Gradient(colors: [.themeSunsetL, .themeSunsetR]), startPoint: .leading, endPoint: .trailing)
+    case "Ferrari":
+        return LinearGradient(gradient: Gradient(colors: [.themeFerrariL, .themeFerrariR]), startPoint: .leading, endPoint: .trailing)
     default:
         return LinearGradient(gradient: Gradient(colors: [.themeEmeraldL, .themeEmeraldR]), startPoint: .leading, endPoint: .trailing)
     }
@@ -40,6 +44,8 @@ func colorFromString(_ colorString: String) -> Color {
         return .themeSeashoreL
     case "Sunset":
         return .themeSunsetL
+    case "Ferrari":
+        return .themeFerrariL
     default:
         return .themeEmeraldL // Default color
     }
@@ -48,7 +54,7 @@ func colorFromString(_ colorString: String) -> Color {
 struct ThemeSelectionView: View {
     @Default(\.currentTheme) var currentTheme
     @State private var selectedTheme: String = "Emerald"
-    let themeColors = ["Emerald", "Seashore", "Sunset"]
+    let themeColors = ["Emerald", "Seashore", "Sunset", "Ferrari"]
     
     var body: some View {
         VStack {
@@ -67,7 +73,8 @@ struct ThemeSelectionView: View {
                             Text(themeColor)
                                 .fontWeight(.semibold)
                                 .foregroundColor(colorFromString(themeColor))
-                                .opacity(selectedTheme == themeColor ? 1 : 0)
+                                .padding(.leading, -12)
+                                .opacity(selectedTheme == themeColor ? 1 : 0.5)
                             ColorPickerView(selectedTheme: $selectedTheme, themeColor: themeColor)
                                 //.padding()
                         }
