@@ -18,6 +18,10 @@ extension Color {
     static let themeFerrariR = Color("FerrariR")
     static let themeSkybreezeL = Color("SkybreezeL")
     static let themeSkybreezeR = Color("SkybreezeR")
+    static let themeOrangeL = Color("OrangeL")
+    static let themeOrangeR = Color("OrangeR")
+    static let themeTeaGreenL = Color("TeaGreenL")
+    static let themeTeaGreenR = Color("TeaGreenR")
 }
 
 // Convert the string to the appropriate LinearGradient
@@ -33,6 +37,10 @@ func gradientFromString(_ gradientString: String) -> LinearGradient {
         return LinearGradient(gradient: Gradient(colors: [.themeFerrariL, .themeFerrariR]), startPoint: .leading, endPoint: .trailing)
     case "Skybreeze":
         return LinearGradient(gradient: Gradient(colors: [.themeSkybreezeL, .themeSkybreezeR]), startPoint: .leading, endPoint: .trailing)
+    case "Orange":
+        return LinearGradient(gradient: Gradient(colors: [.themeOrangeL, .themeOrangeR]), startPoint: .leading, endPoint: .trailing)
+    case "TeaGreen":
+        return LinearGradient(gradient: Gradient(colors: [.themeTeaGreenL, .themeTeaGreenR]), startPoint: .leading, endPoint: .trailing)
     default:
         return LinearGradient(gradient: Gradient(colors: [.themeEmeraldL, .themeEmeraldR]), startPoint: .leading, endPoint: .trailing)
     }
@@ -52,6 +60,10 @@ func colorFromString(_ colorString: String) -> Color {
         return .themeFerrariL
     case "Skybreeze":
         return .themeSkybreezeL
+    case "Orange":
+        return .themeOrangeL
+    case "TeaGreen":
+        return .themeTeaGreenL
     default:
         return .themeEmeraldL // Default color
     }
@@ -60,7 +72,7 @@ func colorFromString(_ colorString: String) -> Color {
 struct ThemeSelectionView: View {
     @Default(\.currentTheme) var currentTheme
     @State private var selectedTheme: String = "Emerald"
-    let themeColors = ["Emerald", "Seashore", "Sunset", "Ferrari", "Skybreeze"]
+    let themeColors = ["Emerald", "Seashore", "Sunset", "Ferrari", "Skybreeze", "Orange", "TeaGreen"]
     
     var body: some View {
         VStack {
