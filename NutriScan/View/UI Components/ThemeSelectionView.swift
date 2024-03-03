@@ -22,6 +22,8 @@ extension Color {
     static let themeOrangeR = Color("OrangeR")
     static let themeTeaGreenL = Color("TeaGreenL")
     static let themeTeaGreenR = Color("TeaGreenR")
+    static let themeAzureL = Color("AzureL")
+    static let themeAzureR = Color("AzureR")
 }
 
 // Convert the string to the appropriate LinearGradient
@@ -41,6 +43,8 @@ func gradientFromString(_ gradientString: String) -> LinearGradient {
         return LinearGradient(gradient: Gradient(colors: [.themeOrangeL, .themeOrangeR]), startPoint: .leading, endPoint: .trailing)
     case "TeaGreen":
         return LinearGradient(gradient: Gradient(colors: [.themeTeaGreenL, .themeTeaGreenR]), startPoint: .leading, endPoint: .trailing)
+    case "Azure":
+        return LinearGradient(gradient: Gradient(colors: [.themeAzureL, .themeAzureR]), startPoint: .leading, endPoint: .trailing)
     default:
         return LinearGradient(gradient: Gradient(colors: [.themeEmeraldL, .themeEmeraldR]), startPoint: .leading, endPoint: .trailing)
     }
@@ -64,6 +68,8 @@ func colorFromString(_ colorString: String) -> Color {
         return .themeOrangeL
     case "TeaGreen":
         return .themeTeaGreenL
+    case "Azure":
+        return .themeAzureL
     default:
         return .themeEmeraldL // Default color
     }
@@ -72,7 +78,7 @@ func colorFromString(_ colorString: String) -> Color {
 struct ThemeSelectionView: View {
     @Default(\.currentTheme) var currentTheme
     @State private var selectedTheme: String = "Emerald"
-    let themeColors = ["Emerald", "Seashore", "Sunset", "Ferrari", "Skybreeze", "Orange", "TeaGreen"]
+    let themeColors = ["Emerald", "Seashore", "Sunset", "Ferrari", "Skybreeze", "Orange", "TeaGreen", "Azure"]
     
     var body: some View {
         VStack {
