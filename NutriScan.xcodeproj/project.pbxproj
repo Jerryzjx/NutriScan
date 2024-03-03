@@ -47,9 +47,6 @@
 		C4BC54832B6F1B6400A435AC /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */; };
 		C4BC54852B6F1E6B00A435AC /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */; };
 		C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */; };
-		C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
-		C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
-		C4D58E2B2B6EF06D00E12C8B /* GeistVariableVF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */; };
 		C4FEC19E2B7A9C02009DFEAD /* DailyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC19D2B7A9C02009DFEAD /* DailyChartView.swift */; };
 		C4FEC1A02B7A9D6B009DFEAD /* WeeklyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC19F2B7A9D6B009DFEAD /* WeeklyChartView.swift */; };
 		C4FEC1A22B7A9D77009DFEAD /* MonthlyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A12B7A9D77009DFEAD /* MonthlyChartView.swift */; };
@@ -117,7 +114,6 @@
 		C4BC54802B6F1B6400A435AC /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		C4BC54842B6F1E6B00A435AC /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
 		C4D58E242B6EEDDB00E12C8B /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
-		C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GeistVariableVF.ttf; path = ../../../Downloads/Geist/GeistVariableVF.ttf; sourceTree = "<group>"; };
 		C4D58E2C2B6EF08800E12C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C4FEC19D2B7A9C02009DFEAD /* DailyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChartView.swift; sourceTree = "<group>"; };
 		C4FEC19F2B7A9D6B009DFEAD /* WeeklyChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChartView.swift; sourceTree = "<group>"; };
@@ -251,7 +247,6 @@
 				C45ADA232B69E277001C34F9 /* NutriScanApp.swift */,
 				C45ADA252B69E277001C34F9 /* ContentView.swift */,
 				C45ADA2B2B69E279001C34F9 /* Preview Content */,
-				C4D58E282B6EF05700E12C8B /* GeistVariableVF.ttf */,
 			);
 			path = NutriScan;
 			sourceTree = "<group>";
@@ -435,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45ADA2D2B69E279001C34F9 /* Preview Assets.xcassets in Resources */,
-				C4D58E292B6EF05700E12C8B /* GeistVariableVF.ttf in Resources */,
 				C4D58E252B6EEDDB00E12C8B /* Colours.xcassets in Resources */,
 				C45ADA2A2B69E279001C34F9 /* Assets.xcassets in Resources */,
 				C4BC54752B6EF30000A435AC /* Geist-Regular.otf in Resources */,
@@ -446,7 +440,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D58E2B2B6EF06D00E12C8B /* GeistVariableVF.ttf in Resources */,
 				C4BC54762B6EF30000A435AC /* Geist-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +448,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D58E2A2B6EF06B00E12C8B /* GeistVariableVF.ttf in Resources */,
 				C4BC54772B6EF30000A435AC /* Geist-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
