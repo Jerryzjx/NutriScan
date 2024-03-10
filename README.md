@@ -45,7 +45,7 @@ Check out NutriList! A Smart Grocery List!
 - Data: Nutrition Facts Data of over 800K grocery items Powered by a REST API
 - Privacy: All user data saved locally using SwiftData
 - Interactive: Over 60 Interactive Charts, track and see your nutrient intake daily, weekly, and monthly!
-- Design: Minimalist UI Design with 5+ themes
+- Design: Minimalist UI Design with 10+ themes
 - HealthKit: Ability to log nutrition data to HealthKit
 ## Check out Demo video below!
 
