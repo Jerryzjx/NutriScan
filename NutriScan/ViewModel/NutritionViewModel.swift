@@ -168,7 +168,7 @@ class NutritionViewModel: ObservableObject {
         let pastSevenDaysIntakes = dailyIntakes.filter { $0.date >= sevenDaysAgo && $0.date <= today }
 
         let totalIntake = pastSevenDaysIntakes.reduce(0) { $0 + $1.totalIntake }
-        return pastSevenDaysIntakes.isEmpty ? 0 : totalIntake / Double(pastSevenDaysIntakes.count)
+        return pastSevenDaysIntakes.isEmpty ? 0 : totalIntake / 7
     }
     
     func averageIntakePastMonth(nutrientType: NutrientType, items: [Item]) -> Double {
@@ -180,7 +180,7 @@ class NutritionViewModel: ObservableObject {
         let pastMonthIntakes = dailyIntakes.filter { $0.date >= thirtyDaysAgo && $0.date <= today }
 
         let totalIntake = pastMonthIntakes.reduce(0) { $0 + $1.totalIntake }
-        return pastMonthIntakes.isEmpty ? 0 : totalIntake / Double(pastMonthIntakes.count)
+        return pastMonthIntakes.isEmpty ? 0 : totalIntake / 31
     }
     
     func averageIntakePastSixMonths(nutrientType: NutrientType, items: [Item]) -> Double {
