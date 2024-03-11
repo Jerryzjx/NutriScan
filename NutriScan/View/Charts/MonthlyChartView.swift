@@ -24,8 +24,11 @@ struct MonthlyChartView: View {
         
         let startDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
         
+        // Adjust startDate to the start of the day in the current calendar
+        let startOfDay = Calendar.current.startOfDay(for: startDate)
         
-        let filteredItems = items.filter { $0.timestamp >= startDate && $0.timestamp <= Date() }
+        // Filter items to include all from the start of the startDate
+        let filteredItems = items.filter { $0.timestamp >= startOfDay && $0.timestamp <= Date() }
         
         VStack {
             Chart {

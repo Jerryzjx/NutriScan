@@ -14,6 +14,8 @@ struct SimpleWeeklyChartView: View {
     @Query(sort: \Item.timestamp, order: .reverse) var items: [Item]
     var nutrientType: NutrientType
     var name: String
+    // width of device
+    let screenSize = UIScreen.main.bounds.size
    
     
     var unit: String {
@@ -49,6 +51,7 @@ struct SimpleWeeklyChartView: View {
             
             WeeklyChartView(viewModel: viewModel, nutrientType: nutrientType, name: name)
                 .frame(height: 100)
+                .frame(width: screenSize.width * 0.667)
                 .chartXAxis(.hidden)
                 .chartYAxis(.hidden)
         }
