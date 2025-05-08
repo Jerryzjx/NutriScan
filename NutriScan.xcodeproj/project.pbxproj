@@ -53,7 +53,6 @@
 		C4FEC1A62B7A9E1E009DFEAD /* NutritionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A52B7A9E1E009DFEAD /* NutritionSummaryView.swift */; };
 		C4FEC1A82B7A9E44009DFEAD /* NutritionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A72B7A9E44009DFEAD /* NutritionViewModel.swift */; };
 		C4FEC1AA2B7AB457009DFEAD /* DetailDailyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEC1A92B7AB457009DFEAD /* DetailDailyChartView.swift */; };
-		C4FEE6122B79B6D7004477F0 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = C4FEE6112B79B6D7004477F0 /* KeyboardKit */; };
 		C4FEE6142B79BB04004477F0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEE6132B79BB04004477F0 /* Defaults.swift */; };
 		C4FEE6162B79C58B004477F0 /* ThemeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEE6152B79C58B004477F0 /* ThemeSelectionView.swift */; };
 /* End PBXBuildFile section */
@@ -130,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4FEE6122B79B6D7004477F0 /* KeyboardKit in Frameworks */,
 				C47A29672B7088CC002AD677 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +333,6 @@
 			name = NutriScan;
 			packageProductDependencies = (
 				C47A29662B7088CC002AD677 /* Alamofire */,
-				C4FEE6112B79B6D7004477F0 /* KeyboardKit */,
 			);
 			productName = NutriScan;
 			productReference = C45ADA202B69E277001C34F9 /* NutriScan.app */;
@@ -411,7 +408,6 @@
 			mainGroup = C45ADA172B69E277001C34F9;
 			packageReferences = (
 				C47A29652B7088CC002AD677 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				C4FEE6102B79B6D7004477F0 /* XCRemoteSwiftPackageReference "KeyboardKit" */,
 			);
 			productRefGroup = C45ADA212B69E277001C34F9 /* Products */;
 			projectDirPath = "";
@@ -659,7 +655,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NutriScan/NutriScan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
@@ -695,7 +691,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NutriScan/NutriScan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"NutriScan/Preview Content\"";
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				ENABLE_PREVIEWS = YES;
@@ -730,7 +726,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -750,7 +746,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -769,7 +765,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -787,7 +783,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = MR3H259R5X;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -850,14 +846,6 @@
 				minimumVersion = 5.8.1;
 			};
 		};
-		C4FEE6102B79B6D7004477F0 /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.3.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -865,11 +853,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C47A29652B7088CC002AD677 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		C4FEE6112B79B6D7004477F0 /* KeyboardKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C4FEE6102B79B6D7004477F0 /* XCRemoteSwiftPackageReference "KeyboardKit" */;
-			productName = KeyboardKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
