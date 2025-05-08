@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import KeyboardKit
-
-class KeyboardController: KeyboardInputViewController {}
 
 struct WaveShapeSettings: Shape {
     
