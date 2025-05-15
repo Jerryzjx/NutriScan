@@ -47,6 +47,8 @@ Check out NutriList! A Smart Grocery List!
 - Interactive: Over 60 Interactive Charts, track and see your nutrient intake daily, weekly, and monthly!
 - Design: Minimalist UI Design with 10+ themes
 - HealthKit: Ability to log nutrition data to HealthKit
+- Widgets: In Development
+- WatchOS App: In Development
 ## Check out Demo video below!
 
 <p align="left">
