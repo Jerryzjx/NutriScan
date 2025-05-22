@@ -49,6 +49,7 @@ Check out NutriList! A Smart Grocery List!
 - HealthKit: Ability to log nutrition data to HealthKit
 - Widgets: In Development
 - WatchOS App: In Development
+- AI Nutrient Scanner: In Development!
 ## Check out Demo video below!
 
 <p align="left">
