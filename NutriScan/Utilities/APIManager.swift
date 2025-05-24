@@ -19,8 +19,8 @@ class APIManager {
     func searchItem(with barcode: String) async throws -> [FoodItem] {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "x-app-id": "9ad138f6",
-            "x-app-key": "9fb8139d6dd7d1e3911845a4e6729821",
+            "x-app-id": "APP-ID",
+            "x-app-key": "API-KEY",
         ]
         
         let parameters: [String: String] = ["upc": barcode]
